@@ -38,8 +38,8 @@ public class SessionHandler extends Thread {
 
             if (type == 0x00) {
                 while (true) {
-                    byte[] buffer = Protocol.decode(in);
-                    String[] tokens = new String(buffer, "UTF8").split("\u0000");
+                    String packet = Protocol.decode(in);
+                    String[] tokens = packet.split("\u0000");
                     String opcode = tokens[0];
 
                     if (opcode.equals(ReceiveOpcode.EXCEPTION.getValue())) {

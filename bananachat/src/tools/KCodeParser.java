@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -27,11 +27,11 @@ public class KCodeParser {
         for (int i = 0; i < str.length(); i++) {
             char current = str.charAt(i);
 
-            if (current == 'Â°' && !escape) {
+            if (current == '°' && !escape) {
                 isCode = !isCode;
 
                 if (isCode) {
-                    if (str.lastIndexOf('Â°') == i) {
+                    if (str.lastIndexOf('°') == i) {
                         break;
                     }
 
@@ -102,9 +102,9 @@ public class KCodeParser {
                         code = filtered;
                     }
 
-                    ret.append('Â°');
+                    ret.append('°');
                     ret.append(code);
-                    ret.append('Â°');
+                    ret.append('°');
                 }
 
                 continue;
@@ -115,7 +115,7 @@ public class KCodeParser {
             } else {
                 if (current == '#' && !escape) {
                     if (!filter || lineBreaks < maxLineBreaks) {
-                        ret.append("#Â°!Â°");
+                        ret.append("#°!°");
                         lineBreaks++;
                     } else {
                         ret.append(' ');
@@ -141,8 +141,8 @@ public class KCodeParser {
                 .replace("\"", "\\\"")
                 .replace("#", "\\#")
                 .replace("_", "\\_")
-                .replace("Â§", "\\Â§")
-                .replace("Â°", "\\Â°")
+                .replace("§", "\\§")
+                .replace("°", "\\°")
                 .trim();
     }
 

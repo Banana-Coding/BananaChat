@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -60,7 +60,7 @@ public class Poll {
             polls.put(id, this);
         }
 
-        Popup popup = new Popup("Umfrage", String.format("Umfrage #%s", id), String.format("%sÂ§##Unter allen Teilnehmern werden 5 Knuddels verlost.", question), 400, 300);
+        Popup popup = new Popup("Umfrage", String.format("Umfrage #%s", id), String.format("%s§##Unter allen Teilnehmern werden 5 Knuddels verlost.", question), 400, 300);
         Panel panel = new Panel();
 
         for (String answer : answers) {
@@ -95,7 +95,7 @@ public class Poll {
 
                 StringBuilder result = new StringBuilder();
                 result.append(question);
-                result.append("Â§#");
+                result.append("§#");
 
                 for (String answer : answers) {
                     int count = 0;
@@ -112,7 +112,7 @@ public class Poll {
                     result.append(count);
                 }
 
-                result.append(String.format("##...und gewonnen hat _Â°B>_h%s|/serverpp \"|/w \"<rÂ°_!", winner));
+                result.append(String.format("##...und gewonnen hat _°B>_h%s|/serverpp \"|/w \"<r°_!", winner));
                 String popup = Popup.create("Umfrage", String.format("Umfrage #%s - Ergebnis", id), result.toString(), 400, 300);
 
                 for (Client c : Server.get().getClients()) {
@@ -126,7 +126,7 @@ public class Poll {
         synchronized (votes) {
             if (!votes.containsKey(client.getName()) && answers.contains(answer)) {
                 if (closed) {
-                    String popup = Popup.create("Umfrage", String.format("Umfrage #%s - Problem", id), "Du hast dir fÃ¼r die Beantwortung der Umfrage zu lange Zeit gelassen.", 400, 300);
+                    String popup = Popup.create("Umfrage", String.format("Umfrage #%s - Problem", id), "Du hast dir für die Beantwortung der Umfrage zu lange Zeit gelassen.", 400, 300);
                     client.send(popup);
                 } else {
                     votes.put(client.getName(), answer);

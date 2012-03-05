@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -51,7 +51,7 @@ public class PollHandler {
             }
 
             if (question.isEmpty() || answers.size() < 2) {
-                String popup = Popup.create("Umfrage", "Problem", "Es mÃ¼ssen eine Frage und mindestens zwei verschiedene AntwortmÃ¶glichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht mÃ¶glich.", 400, 300);
+                String popup = Popup.create("Umfrage", "Problem", "Es müssen eine Frage und mindestens zwei verschiedene Antwortmöglichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht möglich.", 400, 300);
                 client.send(popup);
             } else {
                 new Poll(question, answers).create();

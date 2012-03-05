@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -91,7 +91,7 @@ public class Channel {
 
         if (topic != null) {
             for (Client client : getClients()) {
-                client.sendButlerMessage(name, String.format("Â°BBÂ°_Dieser Channel hat folgendes Thema:Â°rÂ°#%s", topic));
+                client.sendButlerMessage(name, String.format("°BB°_Dieser Channel hat folgendes Thema:°r°#%s", topic));
             }
         }
     }
@@ -178,7 +178,7 @@ public class Channel {
         }
 
         if (topic != null) {
-            client.sendButlerMessage(name, String.format("Â°BBÂ°_Dieser Channel hat folgendes Thema:Â°rÂ°#%s", topic));
+            client.sendButlerMessage(name, String.format("°BB°_Dieser Channel hat folgendes Thema:°r°#%s", topic));
         }
     }
 

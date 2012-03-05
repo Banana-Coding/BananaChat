@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -94,7 +94,7 @@ public class Server {
 
         while (it.hasNext()) {
             String code = it.next();
-            message = message.replace(code, String.format("Â°>%s<Â°", smileys.get(code)));
+            message = message.replace(code, String.format("°>%s<°", smileys.get(code)));
         }
 
         return message;

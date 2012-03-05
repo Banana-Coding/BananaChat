@@ -2,7 +2,7 @@
  * Copyright (C) 2011  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -34,7 +34,7 @@ public class JoinChannelHandler {
         String nickname = tokens[2];
 
         if (nickname.isEmpty()) {
-            client.send(Popup.create("Problem", "Nickname fehlt", "#Um in den Chat eintreten zu kÃ¶nnen, mÃ¼ssen Sie _vorher einen Nick registrieren_.##Klicken Sie dazu auf der Webseite auf folgenden Button:##Â°>neu_reg.gif<Â°", 400, 300));
+            client.send(Popup.create("Problem", "Nickname fehlt", "#Um in den Chat eintreten zu können, müssen Sie _vorher einen Nick registrieren_.##Klicken Sie dazu auf der Webseite auf folgenden Button:##°>neu_reg.gif<°", 400, 300));
             return;
         }
 
@@ -48,12 +48,12 @@ public class JoinChannelHandler {
             ResultSet rs = ps.executeQuery();
 
             if (!rs.next()) {
-                client.send(Popup.create("Problem", "Nick existiert nicht", String.format("#Der Nickname '%s' ist _nicht registriert_.##Um diesen Nicknamen zu registrieren klicken Sie auf der Webseite auf folgenden Button:##Â°>neu_reg.gif<Â°", nickname), 400, 300));
+                client.send(Popup.create("Problem", "Nick existiert nicht", String.format("#Der Nickname '%s' ist _nicht registriert_.##Um diesen Nicknamen zu registrieren klicken Sie auf der Webseite auf folgenden Button:##°>neu_reg.gif<°", nickname), 400, 300));
                 return;
             }
 
             if (!HexTool.hash("SHA1", tokens[3]).equals(rs.getString("password"))) {
-                client.send(Popup.create("Problem", "Falsches Passwort", String.format("#_Falsches Passwort_ fÃ¼r %s verwendet. Achten Sie auf mÃ¶gliche GroÃŸ-/Kleinschreibung Ihres Passwortes.##Â°B>Passwort vergessen/funktioniert nicht mehr?|http://www.knuddels.de/pwd.html<rÂ°##Um einen neuen Nicknamen zu registrieren, klicken Sie auf der Webseite den folgenden Button an:##Â°>neu_reg.gif<Â°", rs.getString("name")), 400, 300));
+                client.send(Popup.create("Problem", "Falsches Passwort", String.format("#_Falsches Passwort_ für %s verwendet. Achten Sie auf mögliche Groß-/Kleinschreibung Ihres Passwortes.##°B>Passwort vergessen/funktioniert nicht mehr?|http://www.knuddels.de/pwd.html<r°##Um einen neuen Nicknamen zu registrieren, klicken Sie auf der Webseite den folgenden Button an:##°>neu_reg.gif<°", rs.getString("name")), 400, 300));
                 return;
             }
 
@@ -78,7 +78,7 @@ public class JoinChannelHandler {
         Channel channel = Server.get().getChannel(tokens[1]);
 
         if (channel == null) {
-            client.send(Popup.create("Problem", "Channellogin nicht mÃ¶glich", String.format("Der Channel _%s existiert nicht_.", tokens[1]), 400, 300));
+            client.send(Popup.create("Problem", "Channellogin nicht möglich", String.format("Der Channel _%s existiert nicht_.", tokens[1]), 400, 300));
             return;
         }
 
@@ -87,7 +87,7 @@ public class JoinChannelHandler {
         }
 
         if (!client.isModerator() && channel.countClients() == channel.getSize()) {
-            client.send(Popup.create("Problem", "Problem", String.format("Dieser Channel ist auf _maximal %s_ Leute beschrÃ¤nkt, bitte wÃ¤hl einen anderen Channel.", channel.getSize()), 400, 300));
+            client.send(Popup.create("Problem", "Problem", String.format("Dieser Channel ist auf _maximal %s_ Leute beschränkt, bitte wähl einen anderen Channel.", channel.getSize()), 400, 300));
             return;
         }
 

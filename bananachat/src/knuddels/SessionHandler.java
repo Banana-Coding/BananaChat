@@ -37,10 +37,10 @@ public class SessionHandler extends Thread {
             byte type = (byte) in.read();
 
             if (type == 0x00) {
-                while (true) {
-                    String packet = Protocol.decode(in);
-                    String[] tokens = packet.split("\u0000");
-                    String opcode = tokens[0];
+				while (true) {
+                    byte[] buffer = Protocol.decode(in);
+                    String[] tokens = Huffman.decode(buffer).split("\0");
+					String opcode = tokens[0];
 
                     if (opcode.equals(ReceiveOpcode.EXCEPTION.getValue())) {
                     } else if (opcode.equals(ReceiveOpcode.DISCONNECT.getValue())) {

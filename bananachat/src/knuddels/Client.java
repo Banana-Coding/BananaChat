@@ -407,10 +407,10 @@ public class Client {
     }
 
     public void send(String message) {
-        if (socket != null && socket.isConnected()) {
+		if (socket != null && socket.isConnected()) {
             try {
-                out.write(Protocol.encode(message.getBytes("UTF8")));
-            } catch (IOException e) {
+                out.write(Protocol.encode(Huffman.encode(message)));
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

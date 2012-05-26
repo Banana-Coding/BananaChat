@@ -37,10 +37,17 @@ public class SessionHandler extends Thread {
             byte type = (byte) in.read();
 
             if (type == 0x00) {
+<<<<<<< HEAD
 				while (true) {
                     byte[] buffer = Protocol.decode(in);
                     String[] tokens = Huffman.decode(buffer).split("\0");
 					String opcode = tokens[0];
+=======
+                while (true) {
+                    byte[] buffer = Protocol.decode(in);
+                    String[] tokens = new String(buffer, "UTF8").split("\u0000");
+                    String opcode = tokens[0];
+>>>>>>> parent of 395f65e... Huffman-Kompremierung hinzugefuegt
 
                     if (opcode.equals(ReceiveOpcode.EXCEPTION.getValue())) {
                     } else if (opcode.equals(ReceiveOpcode.DISCONNECT.getValue())) {

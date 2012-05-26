@@ -16,21 +16,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class Panel {
-    private List<Component> components;
+	private List<Component> components;
 
-    public Panel() {
-        components = new ArrayList<Component>();
-    }
+	public Panel() {
+		components = new ArrayList<Component>();
+	}
 
-    public List<Component> getComponents() {
-        return components;
-    }
+	public List<Component> getComponents() {
+		return components;
+	}
 
-    public void addComponent(Component component) {
-        components.add(component);
-    }
+	public void addComponent(Component component) {
+		components.add(component);
+	}
 }

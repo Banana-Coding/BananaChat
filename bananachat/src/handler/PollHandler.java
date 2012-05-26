@@ -19,49 +19,53 @@ import knuddels.Poll;
 import tools.popup.Popup;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class PollHandler {
-    public static void handle(String[] tokens, Client client) {
-        if (tokens[1].equals("new") && client.isAdministrator()) {
-            String question = tokens[3].trim();
+	public static void handle(String[] tokens, Client client) {
+		if (tokens[1].equals("new") && client.isAdministrator()) {
+			String question = tokens[3].trim();
 
-            List<String> answers = new ArrayList<String>();
+			List<String> answers = new ArrayList<String>();
 
-            for (String answer : tokens[4].split(";")) {
-                answer = answer.trim();
+			for (String answer : tokens[4].split(";")) {
+				answer = answer.trim();
 
-                if (!answer.isEmpty()) {
-                    boolean contains = false;
+				if (!answer.isEmpty()) {
+					boolean contains = false;
 
-                    for (String a : answers) {
-                        if (a.equalsIgnoreCase(answer)) {
-                            contains = true;
-                            break;
-                        }
-                    }
+					for (String a : answers) {
+						if (a.equalsIgnoreCase(answer)) {
+							contains = true;
+							break;
+						}
+					}
 
-                    if (contains) {
-                        continue;
-                    }
+					if (contains) {
+						continue;
+					}
 
-                    answers.add(answer);
-                }
-            }
+					answers.add(answer);
+				}
+			}
 
-            if (question.isEmpty() || answers.size() < 2) {
-                String popup = Popup.create("Umfrage", "Problem", "Es müssen eine Frage und mindestens zwei verschiedene Antwortmöglichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht möglich.", 400, 300);
-                client.send(popup);
-            } else {
-                new Poll(question, answers).create();
-            }
-        } else {
-            Poll poll = Poll.get(Integer.parseInt(tokens[1]));
+			if (question.isEmpty() || answers.size() < 2) {
+				String popup = Popup
+						.create("Umfrage",
+								"Problem",
+								"Es müssen eine Frage und mindestens zwei verschiedene Antwortmöglichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht möglich.",
+								400, 300);
+				client.send(popup);
+			} else {
+				new Poll(question, answers).create();
+			}
+		} else {
+			Poll poll = Poll.get(Integer.parseInt(tokens[1]));
 
-            if (poll != null) {
-                poll.vote(client, tokens[2]);
-            }
-        }
-    }
+			if (poll != null) {
+				poll.vote(client, tokens[2]);
+			}
+		}
+	}
 }

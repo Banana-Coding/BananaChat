@@ -16,28 +16,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class ConnectionPool {
-    private final static List<PoolConnection> pool;
+	private final static List<PoolConnection> pool;
 
-    static {
-        pool = new ArrayList<PoolConnection>();
-    }
+	static {
+		pool = new ArrayList<PoolConnection>();
+	}
 
-    public static PoolConnection getConnection() {
-        synchronized (pool) {
-            for (PoolConnection pcon : pool) {
-                if (!pcon.isInUse()) {
-                    pcon.setInUse();
-                    return pcon;
-                }
-            }
+	public static PoolConnection getConnection() {
+		synchronized (pool) {
+			for (PoolConnection pcon : pool) {
+				if (!pcon.isInUse()) {
+					pcon.setInUse();
+					return pcon;
+				}
+			}
 
-            PoolConnection pcon = new PoolConnection();
-            pool.add(pcon);
-            return pcon;
-        }
-    }
+			PoolConnection pcon = new PoolConnection();
+			pool.add(pcon);
+			return pcon;
+		}
+	}
 }

@@ -13,11 +13,9 @@
 package knuddels.game;
 
 /**
- *
+ * 
  * @author Flav
  */
 public enum MafiaCharacter {
-    CITIZEN,
-    DETECTIVE,
-    GANGSTER;
+	CITIZEN, DETECTIVE, GANGSTER;
 }

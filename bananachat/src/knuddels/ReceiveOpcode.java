@@ -13,31 +13,21 @@
 package knuddels;
 
 /**
- *
+ * 
  * @author Flav
  */
 public enum ReceiveOpcode {
-    EXCEPTION("1"),
-    DISCONNECT("d"),
-    CHAT("e"),
-    PING("h"),
-    POLL("iv"),
-    LINK_CLICKED("j"),
-    JOIN_CHANNEL("n"),
-    Q_TOKEN("q"),
-    REQUEST_USER_LIST("r"),
-    HANDSHAKE("t"),
-    REQUEST_HELP("u"),
-    LEAVE_CHANNEL("w"),
-    WHOIS("whois");
+	EXCEPTION("1"), DISCONNECT("d"), CHAT("e"), PING("h"), POLL("iv"), LINK_CLICKED(
+			"j"), JOIN_CHANNEL("n"), Q_TOKEN("q"), REQUEST_USER_LIST("r"), HANDSHAKE(
+			"t"), REQUEST_HELP("u"), LEAVE_CHANNEL("w"), WHOIS("whois");
 
-    private String opcode;
+	private String opcode;
 
-    private ReceiveOpcode(String opcode) {
-        this.opcode = opcode;
-    }
+	private ReceiveOpcode(String opcode) {
+		this.opcode = opcode;
+	}
 
-    public String getValue() {
-        return opcode;
-    }
+	public String getValue() {
+		return opcode;
+	}
 }

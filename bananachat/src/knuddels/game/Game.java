@@ -16,11 +16,14 @@ import java.util.List;
 import knuddels.Client;
 
 /**
- *
+ * 
  * @author Flav
  */
 public interface Game {
-    public boolean parsePublicMessage(String message, Client client);
-    public boolean parsePrivateMessage(List<Client> targets, String message, Client client);
-    public void onLeave(Client client);
+	public boolean parsePublicMessage(String message, Client client);
+
+	public boolean parsePrivateMessage(List<Client> targets, String message,
+			Client client);
+
+	public void onLeave(Client client);
 }

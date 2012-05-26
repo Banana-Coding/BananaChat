@@ -3,7 +3,7 @@ package tools.huffman;
 import java.util.Hashtable;
 
 /**
- *
+ * 
  * @author Knuddels GmbH & Co. KG
  */
 @SuppressWarnings({ "unchecked", "rawtypes", "unused" })
@@ -161,7 +161,7 @@ public class HuffmanEncoder {
 					i1 <<= 1;
 				}
 			} else {
-				while ((i1 & 1) == 1)  {
+				while ((i1 & 1) == 1) {
 					i1 >>= 1;
 					j1--;
 				}
@@ -208,7 +208,9 @@ public class HuffmanEncoder {
 
 		if (k + 1 >= s.length()) {
 			if (hashtable.get(b(c1)) != null) {
-				throw new RuntimeException((new StringBuilder()).append("ERROR while constructing tree ").append(s).toString());
+				throw new RuntimeException((new StringBuilder())
+						.append("ERROR while constructing tree ").append(s)
+						.toString());
 			}
 
 			hashtable.put(b(c1), obj);

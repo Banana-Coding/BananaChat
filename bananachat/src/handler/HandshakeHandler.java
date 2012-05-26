@@ -16,12 +16,12 @@ import knuddels.Client;
 import tools.PacketCreator;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class HandshakeHandler {
-    public static void handle(String[] tokens, Client client) {
-        client.send(PacketCreator.butler());
-        client.sendHello();
-    }
+	public static void handle(String[] tokens, Client client) {
+		client.send(PacketCreator.butler());
+		client.sendHello();
+	}
 }

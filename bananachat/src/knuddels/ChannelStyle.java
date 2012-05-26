@@ -16,64 +16,58 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class ChannelStyle {
-    private byte fontSize;
-    private byte lineSpace;
-    private String
-            foreground,
-            background,
-            red,
-            blue,
-            administrator,
-            moderator;
+	private byte fontSize;
+	private byte lineSpace;
+	private String foreground, background, red, blue, administrator, moderator;
 
-    public ChannelStyle(ResultSet rs) throws SQLException {
-        fontSize = rs.getByte("fontSize");
-        lineSpace = rs.getByte("lineSpace");
-        foreground = rs.getString("foreground");
-        background = rs.getString("background");
-        red = rs.getString("red");
-        blue = rs.getString("blue");
-        administrator = rs.getString("administrator");
-        moderator = rs.getString("moderator");
-    }
+	public ChannelStyle(ResultSet rs) throws SQLException {
+		fontSize = rs.getByte("fontSize");
+		lineSpace = rs.getByte("lineSpace");
+		foreground = rs.getString("foreground");
+		background = rs.getString("background");
+		red = rs.getString("red");
+		blue = rs.getString("blue");
+		administrator = rs.getString("administrator");
+		moderator = rs.getString("moderator");
+	}
 
-    public byte getFontSize() {
-        return fontSize;
-    }
+	public byte getFontSize() {
+		return fontSize;
+	}
 
-    public byte getLineSpace() {
-        return lineSpace;
-    }
+	public byte getLineSpace() {
+		return lineSpace;
+	}
 
-    public String getForeground() {
-        return foreground;
-    }
+	public String getForeground() {
+		return foreground;
+	}
 
-    public String getBackground() {
-        return background;
-    }
+	public String getBackground() {
+		return background;
+	}
 
-    public String getRed() {
-        return red;
-    }
+	public String getRed() {
+		return red;
+	}
 
-    public String getBlue() {
-        return blue;
-    }
+	public String getBlue() {
+		return blue;
+	}
 
-    public String getRankColor(Client client) {
-        if (client.isAdministrator()) {
-            return administrator;
-        }
+	public String getRankColor(Client client) {
+		if (client.isAdministrator()) {
+			return administrator;
+		}
 
-        if (client.isModerator()) {
-            return moderator;
-        }
+		if (client.isModerator()) {
+			return moderator;
+		}
 
-        return foreground;
-    }
+		return foreground;
+	}
 }

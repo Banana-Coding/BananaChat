@@ -15,34 +15,34 @@ package tools;
 import java.security.MessageDigest;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class HexTool {
-    private static final char[] hexDigit = {
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
-    };
+	private static final char[] hexDigit = { '0', '1', '2', '3', '4', '5', '6',
+			'7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-    private static String toHex(byte b) {
-        int signed = b & 0xFF;
-        char[] hex = new char[] { hexDigit[signed >> 4], hexDigit[signed & 0x0F] };
-        return String.valueOf(hex);
-    }
+	private static String toHex(byte b) {
+		int signed = b & 0xFF;
+		char[] hex = new char[] { hexDigit[signed >> 4],
+				hexDigit[signed & 0x0F] };
+		return String.valueOf(hex);
+	}
 
-    public static String hash(String algorithm, String str) {
-        StringBuilder ret = new StringBuilder();
-        byte[] bytes = null;
+	public static String hash(String algorithm, String str) {
+		StringBuilder ret = new StringBuilder();
+		byte[] bytes = null;
 
-        try {
-            MessageDigest hash = MessageDigest.getInstance(algorithm);
-            bytes = hash.digest(str.getBytes("UTF8"));
-        } catch (Exception e) {
-        }
+		try {
+			MessageDigest hash = MessageDigest.getInstance(algorithm);
+			bytes = hash.digest(str.getBytes("UTF8"));
+		} catch (Exception e) {
+		}
 
-        for (byte b : bytes) {
-            ret.append(toHex(b));
-        }
+		for (byte b : bytes) {
+			ret.append(toHex(b));
+		}
 
-        return ret.toString();
-    }
+		return ret.toString();
+	}
 }

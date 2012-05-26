@@ -13,55 +13,55 @@
 package tools;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class PacketBuilder {
-    private StringBuilder buffer;
+	private StringBuilder buffer;
 
-    public PacketBuilder() {
-        buffer = new StringBuilder();
-    }
+	public PacketBuilder() {
+		buffer = new StringBuilder();
+	}
 
-    public PacketBuilder(String opcode) {
-        buffer = new StringBuilder(opcode);
-    }
+	public PacketBuilder(String opcode) {
+		buffer = new StringBuilder(opcode);
+	}
 
-    public void write(int[] b) {
-        for (int i = 0; i < b.length; i++) {
-            writeByte(b[i]);
-        }
-    }
+	public void write(int[] b) {
+		for (int i = 0; i < b.length; i++) {
+			writeByte(b[i]);
+		}
+	}
 
-    public void writeByte(int b) {
-        buffer.append((char) b);
-    }
+	public void writeByte(int b) {
+		buffer.append((char) b);
+	}
 
-    public void writeShort(int s) {
-        writeByte((s >> 8) & 0xFF);
-        writeByte(s & 0xFF);
-    }
+	public void writeShort(int s) {
+		writeByte((s >> 8) & 0xFF);
+		writeByte(s & 0xFF);
+	}
 
-    public void writeString(String str) {
-        writeString(str, false, false);
-    }
+	public void writeString(String str) {
+		writeString(str, false, false);
+	}
 
-    public void writeString(String str, boolean appendLength, boolean isShort) {
-        if (appendLength) {
-            int length = str.length();
+	public void writeString(String str, boolean appendLength, boolean isShort) {
+		if (appendLength) {
+			int length = str.length();
 
-            if (isShort) {
-                writeShort(length);
-            } else {
-                writeByte(length);
-            }
-        }
+			if (isShort) {
+				writeShort(length);
+			} else {
+				writeByte(length);
+			}
+		}
 
-        buffer.append(str);
-    }
+		buffer.append(str);
+	}
 
-    @Override
-    public String toString() {
-        return buffer.toString();
-    }
+	@Override
+	public String toString() {
+		return buffer.toString();
+	}
 }

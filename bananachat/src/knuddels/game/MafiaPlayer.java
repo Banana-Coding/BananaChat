@@ -13,26 +13,26 @@
 package knuddels.game;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class MafiaPlayer {
-    private String name;
-    private MafiaCharacter character;
+	private String name;
+	private MafiaCharacter character;
 
-    public MafiaPlayer(String name) {
-        this.name = name;
-    }
+	public MafiaPlayer(String name) {
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public MafiaCharacter getCharacter() {
-        return character;
-    }
+	public MafiaCharacter getCharacter() {
+		return character;
+	}
 
-    public void setCharacter(MafiaCharacter character) {
-        this.character = character;
-    }
+	public void setCharacter(MafiaCharacter character) {
+		this.character = character;
+	}
 }

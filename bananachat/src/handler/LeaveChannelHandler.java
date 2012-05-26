@@ -17,30 +17,30 @@ import knuddels.Client;
 import knuddels.Server;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class LeaveChannelHandler {
-    public static void handle(String[] tokens, Client client) {
-        Channel channel = Server.get().getChannel(tokens[1]);
+	public static void handle(String[] tokens, Client client) {
+		Channel channel = Server.get().getChannel(tokens[1]);
 
-        if (channel == null || !channel.getClients().contains(client)) {
-            return;
-        }
+		if (channel == null || !channel.getClients().contains(client)) {
+			return;
+		}
 
-        channel.leave(client);
-        client.leaveChannel(channel);
+		channel.leave(client);
+		client.leaveChannel(channel);
 
-//        if (tokens.length >= 4) {
-//            client.updatePosition(tokens[2], tokens[3]);
-//
-//            if (tokens.length >= 6) {
-//                client.updateSize(tokens[4], tokens[5]);
-//
-//                if (tokens.length >= 7) {
-//                    client.updateScrollspeed(tokens[6]);
-//                }
-//            }
-//        }
-    }
+		// if (tokens.length >= 4) {
+		// client.updatePosition(tokens[2], tokens[3]);
+		//
+		// if (tokens.length >= 6) {
+		// client.updateSize(tokens[4], tokens[5]);
+		//
+		// if (tokens.length >= 7) {
+		// client.updateScrollspeed(tokens[6]);
+		// }
+		// }
+		// }
+	}
 }

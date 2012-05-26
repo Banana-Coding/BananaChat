@@ -18,37 +18,37 @@ import knuddels.CommandParser;
 import knuddels.Server;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class ChatHandler {
-    public static void handle(String[] tokens, Client client) {
-        Channel channel = Server.get().getChannel(tokens[1]);
+	public static void handle(String[] tokens, Client client) {
+		Channel channel = Server.get().getChannel(tokens[1]);
 
-        if (channel == null || !channel.getClients().contains(client)) {
-            return;
-        }
+		if (channel == null || !channel.getClients().contains(client)) {
+			return;
+		}
 
-        if (client.isAway()) {
-            client.setAway(false);
-        }
+		if (client.isAway()) {
+			client.setAway(false);
+		}
 
-        if (!client.isModerator()) {
-            if (client.checkSpam(channel.getName())) {
-                return;
-            }
-        }
+		if (!client.isModerator()) {
+			if (client.checkSpam(channel.getName())) {
+				return;
+			}
+		}
 
-        String message = tokens[2].trim();
+		String message = tokens[2].trim();
 
-        if (message.isEmpty()) {
-            return;
-        }
+		if (message.isEmpty()) {
+			return;
+		}
 
-        if (message.charAt(0) == '/') {
-            CommandParser.parse(message, client, channel);
-        } else {
-            channel.broadcastMessage(message, client, false);
-        }
-    }
+		if (message.charAt(0) == '/') {
+			CommandParser.parse(message, client, channel);
+		} else {
+			channel.broadcastMessage(message, client, false);
+		}
+	}
 }

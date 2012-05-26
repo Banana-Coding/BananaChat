@@ -13,23 +13,19 @@
 package tools.popup;
 
 /**
- *
+ * 
  * @author Flav
  */
 public enum ComponentType {
-    BUTTON('b'),
-    TEXT_FIELD('f'),
-    LABEL('l'),
-    TEXT_AREA('t'),
-    CHECKBOX('x');
+	BUTTON('b'), TEXT_FIELD('f'), LABEL('l'), TEXT_AREA('t'), CHECKBOX('x');
 
-    private int type;
+	private int type;
 
-    private ComponentType(int type) {
-        this.type = type;
-    }
+	private ComponentType(int type) {
+		this.type = type;
+	}
 
-    public int getValue() {
-        return type;
-    }
+	public int getValue() {
+		return type;
+	}
 }

@@ -13,40 +13,24 @@
 package knuddels;
 
 /**
- *
+ * 
  * @author Flav
  */
 public enum SendOpcode {
-    PLAY_MP3("#"),
-    HELLO("("),
-    PONG(","),
-    UPDATE_CHANNEL_SETTINGS("1"),
-    BUTLER("5"),
-    KICK("6"),
-    MODULE(":"),
-    CHANNEL_FRAME("a"),
-    CHANNEL_LIST("b"),
-    SWITCH_CHANNEL("d"),
-    PUBLIC_MESSAGE("e"),
-    UPDATE_CHANNEL_BACKGROUND("j"),
-    POPUP("k"),
-    ADD_USER("l"),
-    ADD_ICON("m"),
-    PLAY_SOUND("o"),
-    PRIVATE_MESSAGE("r"),
-    ACTION("t"),
-    USER_LIST("u"),
-    REMOVE_USER("w"),
-    OPEN_URL("x"),
-    REMOVE_ICON("z");
+	PLAY_MP3("#"), HELLO("("), PONG(","), UPDATE_CHANNEL_SETTINGS("1"), BUTLER(
+			"5"), KICK("6"), MODULE(":"), CHANNEL_FRAME("a"), CHANNEL_LIST("b"), SWITCH_CHANNEL(
+			"d"), PUBLIC_MESSAGE("e"), UPDATE_CHANNEL_BACKGROUND("j"), POPUP(
+			"k"), ADD_USER("l"), ADD_ICON("m"), PLAY_SOUND("o"), PRIVATE_MESSAGE(
+			"r"), ACTION("t"), USER_LIST("u"), REMOVE_USER("w"), OPEN_URL("x"), REMOVE_ICON(
+			"z");
 
-    private String opcode;
+	private String opcode;
 
-    private SendOpcode(String opcode) {
-        this.opcode = opcode;
-    }
+	private SendOpcode(String opcode) {
+		this.opcode = opcode;
+	}
 
-    public String getValue() {
-        return opcode;
-    }
+	public String getValue() {
+		return opcode;
+	}
 }

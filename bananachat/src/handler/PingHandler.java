@@ -16,18 +16,18 @@ import knuddels.Client;
 import tools.PacketCreator;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class PingHandler {
-    public static void handle(String[] tokens, Client client) {
-        if (tokens[1].equals("-")) {
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-            }
+	public static void handle(String[] tokens, Client client) {
+		if (tokens[1].equals("-")) {
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+			}
 
-            client.send(PacketCreator.pong());
-        }
-    }
+			client.send(PacketCreator.pong());
+		}
+	}
 }

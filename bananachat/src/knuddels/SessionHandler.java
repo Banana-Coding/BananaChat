@@ -41,7 +41,8 @@ public class SessionHandler extends Thread {
 			if (type == 0x00) {
 				while (true) {
 					byte[] buffer = Protocol.decode(in);
-					String[] tokens = Huffman.getDecoder().decode(buffer).split("\0");
+					String[] tokens = Huffman.getDecoder().decode(buffer)
+							.split("\0");
 					String opcode = tokens[0];
 
 					if (opcode.equals(ReceiveOpcode.EXCEPTION.getValue())) {

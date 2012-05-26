@@ -16,13 +16,16 @@ import knuddels.Client;
 import tools.PacketCreator;
 
 /**
- *
+ * 
  * @author Flav
  */
 public class RequestHelpHandler {
-    public static void handle(String[] tokens, Client client) {
-        if (tokens[1].equals("login")) {
-            client.send(PacketCreator.openURL("http://www2.knuddels.de/dprint/dprint.pl?jig=4&domain=Knuddels.de", "_blank"));
-        }
-    }
+	public static void handle(String[] tokens, Client client) {
+		if (tokens[1].equals("login")) {
+			client.send(PacketCreator
+					.openURL(
+							"http://www2.knuddels.de/dprint/dprint.pl?jig=4&domain=Knuddels.de",
+							"_blank"));
+		}
+	}
 }

@@ -3,7 +3,7 @@ package tools.huffman;
 import java.util.Hashtable;
 
 /**
- *
+ * 
  * @author Knuddels GmbH & Co. KG
  */
 @SuppressWarnings({ "unused" })

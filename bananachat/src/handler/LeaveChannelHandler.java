@@ -1,8 +1,8 @@
 /* Banana-Chat - The first Open Source Knuddels Emulator
- * Copyright (C) 2011  Flav <http://banana-coding.com>
+ * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -30,17 +30,5 @@ public class LeaveChannelHandler {
 
 		channel.leave(client);
 		client.leaveChannel(channel);
-
-		// if (tokens.length >= 4) {
-		// client.updatePosition(tokens[2], tokens[3]);
-		//
-		// if (tokens.length >= 6) {
-		// client.updateSize(tokens[4], tokens[5]);
-		//
-		// if (tokens.length >= 7) {
-		// client.updateScrollspeed(tokens[6]);
-		// }
-		// }
-		// }
 	}
 }

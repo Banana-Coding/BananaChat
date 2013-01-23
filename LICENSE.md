@@ -1,10 +1,10 @@
 Lizenz
 ======
 Banana-Chat - The first Open Source Knuddels Emulator
-Copyright (C) 2011  Flav <http://banana-coding.com>
+Copyright (C) 2011-2013  Flav <http://banana-coding.com>
 
 Alle Dateien unterliegen dem Copyright von Banana-Coding und
-dürfen verändert, aber weder in andere Projekte eingefügt noch
+dï¿½rfen verï¿½ndert, aber weder in andere Projekte eingefï¿½gt noch
 reproduziert werden.
 
 Der Emulator dient - sofern der Client nicht aus Eigenproduktion

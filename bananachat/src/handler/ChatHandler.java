@@ -20,6 +20,7 @@ import knuddels.Server;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class ChatHandler {
 	public static void handle(String[] tokens, Client client) {

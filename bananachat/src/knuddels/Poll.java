@@ -26,6 +26,7 @@ import tools.popup.Popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Poll {
 	private final static Map<Integer, Poll> polls;

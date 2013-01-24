@@ -27,6 +27,7 @@ import tools.popup.TextField;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class CommandParser {
 	private static NumberFormat nf;

@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class ConnectionPool {
 	private final static List<PoolConnection> pool;

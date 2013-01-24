@@ -15,6 +15,7 @@ package tools;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Pair<L, R> {
 	private L left;

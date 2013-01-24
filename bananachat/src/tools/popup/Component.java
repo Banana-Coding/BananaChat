@@ -15,6 +15,7 @@ package tools.popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public interface Component {
 	public ComponentType getType();

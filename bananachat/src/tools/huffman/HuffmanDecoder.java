@@ -14,6 +14,7 @@ import java.util.Hashtable;
 /**
  * 
  * @author Knuddels GmbH & Co. KG
+ * @since 1.1
  */
 
 @SuppressWarnings({ "unused" })

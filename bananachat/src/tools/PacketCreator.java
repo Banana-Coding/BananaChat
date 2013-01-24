@@ -22,6 +22,7 @@ import knuddels.Server;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class PacketCreator {
 	public static String playMp3(String stream) {

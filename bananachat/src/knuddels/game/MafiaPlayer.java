@@ -15,6 +15,7 @@ package knuddels.game;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class MafiaPlayer {
 	private String name;

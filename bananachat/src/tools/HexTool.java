@@ -17,6 +17,7 @@ import java.security.MessageDigest;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class HexTool {
 	private static final char[] hexDigit = { '0', '1', '2', '3', '4', '5', '6',

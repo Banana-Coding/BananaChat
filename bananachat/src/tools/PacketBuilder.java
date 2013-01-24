@@ -15,6 +15,7 @@ package tools;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class PacketBuilder {
 	private StringBuilder buffer;

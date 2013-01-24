@@ -22,6 +22,7 @@ import java.util.Properties;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 
 public class PoolConnection {

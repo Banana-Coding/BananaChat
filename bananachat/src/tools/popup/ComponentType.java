@@ -15,6 +15,7 @@ package tools.popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public enum ComponentType {
 	BUTTON('b'), TEXT_FIELD('f'), LABEL('l'), TEXT_AREA('t'), CHECKBOX('x');

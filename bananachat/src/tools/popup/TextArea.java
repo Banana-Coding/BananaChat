@@ -15,6 +15,7 @@ package tools.popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class TextArea implements Component {
 	private int[] foreground, background;

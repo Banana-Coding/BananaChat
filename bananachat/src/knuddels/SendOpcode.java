@@ -15,6 +15,7 @@ package knuddels;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public enum SendOpcode {
 	PLAY_MP3("#"), HELLO("("), PONG(","), UPDATE_CHANNEL_SETTINGS("1"), BUTLER(

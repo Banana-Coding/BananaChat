@@ -18,6 +18,7 @@ import tools.PacketCreator;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class RequestHelpHandler {
 	public static void handle(String[] tokens, Client client) {

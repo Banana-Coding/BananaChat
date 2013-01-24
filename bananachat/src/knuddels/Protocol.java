@@ -18,6 +18,7 @@ import java.io.IOException;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Protocol {
 	public static byte[] decode(InputStream in) throws IOException {

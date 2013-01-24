@@ -15,6 +15,7 @@ package tools.huffman;
 /**
  * 
  * @author Flav
+ * @since 1.1
  */
 
 public class Huffman {

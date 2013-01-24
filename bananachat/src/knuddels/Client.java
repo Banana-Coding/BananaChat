@@ -32,6 +32,7 @@ import tools.huffman.Huffman;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Client {
 	private final List<Channel> channels;

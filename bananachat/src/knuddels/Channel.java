@@ -28,6 +28,7 @@ import tools.database.PoolConnection;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Channel {
 	private final List<Client> clients;

@@ -15,6 +15,7 @@ package tools;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class KCodeParser {
 	public static String parse(String str, boolean filter, int maxLineBreaks,

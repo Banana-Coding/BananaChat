@@ -21,6 +21,7 @@ import tools.popup.Popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class PollHandler {
 	public static void handle(String[] tokens, Client client) {

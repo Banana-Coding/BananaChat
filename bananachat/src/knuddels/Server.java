@@ -30,6 +30,7 @@ import tools.database.PoolConnection;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Server {
 	private final static Server instance;

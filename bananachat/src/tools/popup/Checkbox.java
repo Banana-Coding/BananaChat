@@ -15,6 +15,7 @@ package tools.popup;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Checkbox implements Component {
 	private int[] foreground, background;

@@ -18,6 +18,7 @@ import knuddels.Client;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public interface Game {
 	public boolean parsePublicMessage(String message, Client client);

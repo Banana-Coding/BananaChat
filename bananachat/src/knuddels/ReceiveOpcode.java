@@ -15,6 +15,7 @@ package knuddels;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public enum ReceiveOpcode {
 	EXCEPTION("1"), DISCONNECT("d"), CHAT("e"), PING("h"), POLL("iv"), LINK_CLICKED(

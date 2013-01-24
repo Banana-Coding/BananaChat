@@ -20,6 +20,7 @@ import tools.PacketBuilder;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class Popup {
 	private String title, subtitle, message;

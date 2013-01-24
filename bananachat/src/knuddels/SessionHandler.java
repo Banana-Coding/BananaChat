@@ -22,6 +22,7 @@ import tools.huffman.Huffman;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class SessionHandler extends Thread {
 	private Socket socket;

@@ -18,6 +18,7 @@ import java.sql.SQLException;
 /**
  * 
  * @author Flav
+ * @since 1.0
  */
 public class ChannelStyle {
 	private byte fontSize;

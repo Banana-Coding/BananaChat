@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>BananaChat: Huffman.java Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BananaChat
+   &#160;<span id="projectnumber">1.1</span>
+   </div>
+   <div id="projectbrief">The first Open Source Knuddels Emulator</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_huffman_8java_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funktionen</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Huffman.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Banana-Chat - The first Open Source Knuddels Emulator</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2011-2013  Flav &lt;http://banana-coding.com&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Diese Datei unterliegt dem Copyright von Banana-Coding und</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * darf verändert, aber weder in andere Projekte eingefügt noch</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * reproduziert werden.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Der Emulator dient - sofern der Client nicht aus Eigenproduktion</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * stammt - nur zu Lernzwecken, das Hosten des originalen Clients</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * ist untersagt und wird der Knuddels GmbH gemeldet.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">package </span>tools.huffman;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classtools_1_1huffman_1_1_huffman.html">   21</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classtools_1_1huffman_1_1_huffman.html">Huffman</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_encoder.html">HuffmanEncoder</a> encoder;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_decoder.html">HuffmanDecoder</a> decoder;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        String tree = <span class="keyword">new</span> String(</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">new</span> <span class="keywordtype">char</span>[] { 8, 121, 239, 124, 47, 115, 101, 114, 118, 101,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        114, 112, 112, 32, 34, 30, 116, 116, 9, 68, 33, 101,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        97, 34, 117, 100, 15, 131, 17, 1079, 18, 218, 18, 222,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        16, 8364, 15, 8254, 15, 133, 33, 252, 114, 12, 200, 53,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        83, 116, 101, 53, 101, 99, 107, 31, 48, 54, 95, 77, 97,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        102, 105, 97, 34, 54, 55, 34, 78, 73, 34, 108, 98, 34,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        111, 117, 6, 35, 5, 10, 4, 176, 31, 115, 105, 52, 112,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        108, 97, 31, 116, 105, 52, 102, 111, 114, 8, 12, 53,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        98, 111, 121, 11, 13, 53, 109, 97, 110, 33, 75, 108,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        34, 57, 55, 34, 117, 98, 53, 117, 114, 103, 53, 107,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        116, 101, 32, 79, 75, 32, 117, 101, 8, 98, 32, 111,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        112, 33, 101, 118, 33, 79, 98, 54, 112, 101, 114, 33,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        75, 111, 32, 77, 111, 93, 95, 176, 62, 95, 104, 8, 109,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        31, 100, 105, 31, 114, 97, 11, 106, 15, 130, 18, 970,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        18, 217, 17, 198, 16, 353, 15, 185, 16, 9644, 17, 201,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        17, 248, 34, 53, 51, 34, 108, 104, 14, 8226, 14, 96,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        31, 112, 121, 30, 49, 51, 30, 110, 110, 7, 227, 32,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        114, 99, 200, 95, 110, 105, 99, 107, 108, 105, 115,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        116, 95, 32, 101, 102, 53, 98, 114, 97, 31, 101, 101,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        53, 116, 101, 110, 32, 110, 99, 52, 63, 100, 61, 32,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        87, 111, 34, 55, 55, 13, 250, 33, 57, 52, 52, 105, 110,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        103, 11, 14, 32, 48, 50, 31, 68, 101, 31, 97, 117, 33,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        82, 117, 34, 111, 121, 34, 107, 109, 53, 101, 105, 103,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        32, 69, 115, 33, 107, 115, 33, 79, 108, 8, 53, 9, 69,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        31, 105, 105, 11, 22, 34, 109, 102, 34, 70, 111, 34,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        115, 107, 16, 178, 17, 9565, 17, 158, 18, 64380, 18,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        65185, 18, 65190, 18, 8217, 17, 281, 18, 64398, 18,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        65270, 14, 21, 32, 69, 114, 54, 117, 115, 101, 33, 79,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        110, 32, 111, 108, 33, 56, 57, 34, 107, 246, 34, 90,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        101, 52, 97, 114, 116, 31, 114, 105, 8, 119, 32, 99,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        111, 14, 25, 14, 196, 34, 67, 116, 33, 118, 97, 31, 98,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        105, 52, 108, 105, 110, 32, 104, 114, 32, 105, 100, 32,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        100, 111, 32, 110, 107, 32, 120, 120, 34, 119, 98, 14,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        24, 16, 1082, 16, 205, 15, 139, 34, 112, 104, 34, 102,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        119, 53, 110, 111, 99, 32, 119, 101, 52, 121, 101, 114,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        31, 102, 101, 32, 107, 111, 32, 104, 116, 31, 109, 105,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        53, 49, 48, 48, 32, 51, 49, 7, 51, 7, 108, 10, 87, 31,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        102, 99, 34, 107, 252, 15, 1074, 16, 249, 18, 1171, 18,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        8482, 17, 1072, 14, 180, 33, 105, 122, 32, 48, 57, 31,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        66, 78, 30, 105, 109, 9, 1, 50, 0, 112, 0, 33, 75, 114,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        34, 79, 111, 34, 101, 103, 53, 80, 117, 110, 32, 121,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        108, 32, 101, 104, 32, 82, 111, 32, 83, 117, 33, 120,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        101, 54, 104, 101, 108, 53, 104, 108, 116, 31, 101,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        116, 31, 115, 109, 10, 77, 32, 112, 97, 32, 51, 56, 9,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        122, 33, 70, 108, 33, 52, 56, 32, 117, 102, 53, 75,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        110, 117, 32, 78, 105, 32, 104, 105, 34, 108, 122, 13,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        220, 54, 104, 101, 114, 32, 83, 111, 34, 83, 252, 34,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        117, 104, 15, 8594, 15, 9617, 14, 1085, 34, 114, 252,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        30, 70, 104, 52, 77, 105, 110, 31, 98, 97, 31, 112,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        108, 94, 48, 44, 48, 44, 48, 30, 49, 55, 30, 32, 32,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        53, 98, 105, 110, 33, 71, 108, 33, 78, 117, 115, 77,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        97, 102, 105, 97, 50, 31, 100, 97, 33, 82, 104, 54,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        107, 101, 110, 32, 83, 108, 10, 73, 137, 107, 110, 117,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        100, 100, 101, 108, 32, 70, 98, 31, 66, 111, 33, 84,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        111, 34, 122, 97, 16, 402, 17, 181, 17, 9619, 15, 134,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        14, 1080, 33, 71, 111, 33, 53, 54, 53, 111, 105, 115,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        32, 99, 101, 10, 78, 32, 48, 51, 33, 114, 98, 33, 104,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        110, 53, 114, 105, 101, 33, 74, 101, 33, 68, 114, 8,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        52, 53, 70, 117, 223, 33, 74, 117, 34, 110, 121, 34,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        89, 111, 31, 51, 54, 53, 104, 101, 105, 34, 53, 56, 34,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        111, 118, 12, 36, 31, 66, 66, 8, 38, 94, 66, 105, 110,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        103, 111, 53, 108, 105, 101, 33, 98, 121, 33, 73, 103,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        52, 115, 116, 101, 10, 17, 7, 50, 10, 71, 32, 105, 99,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        54, 107, 108, 101, 18, 65275, 18, 1071, 17, 1106, 16,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        224, 16, 1751, 18, 1077, 18, 193, 18, 213, 18, 9474,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        17, 238, 17, 9556, 16, 127, 15, 214, 34, 54, 52, 31,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        115, 101, 31, 50, 51, 31, 110, 103, 32, 119, 97, 33,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        68, 252, 33, 102, 108, 31, 97, 114, 32, 114, 115, 32,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        66, 105, 132, 0, 112, 0, 66, 0, 45, 0, 7, 245, 7, 44,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        8, 194, 52, 117, 116, 101, 31, 118, 101, 10, 64, 33,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        115, 108, 33, 97, 99, 32, 72, 101, 7, 66, 29, 50, 48,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        32, 87, 105, 34, 99, 108, 34, 77, 246, 33, 100, 109,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        31, 77, 97, 30, 108, 101, 7, 105, 32, 111, 116, 34,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        115, 99, 34, 117, 117, 12, 9, 10, 83, 53, 103, 101, 98,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        32, 77, 101, 255, 16, 11, 102, 101, 109, 97, 108, 101,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        46, 98, 46, 109, 121, 95, 52, 46, 103, 105, 102, 32,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        116, 108, 30, 49, 54, 52, 99, 104, 116, 34, 108, 228,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        34, 112, 117, 34, 115, 98, 34, 53, 49, 53, 70, 105,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        102, 32, 57, 48, 53, 101, 114, 104, 52, 50, 53, 53, 10,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        75, 31, 105, 103, 8, 124, 30, 109, 97, 32, 50, 57, 34,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        65, 109, 15, 9835, 16, 8250, 17, 157, 17, 160, 17, 254,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        17, 8592, 17, 153, 17, 321, 15, 1084, 33, 75, 246, 53,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        118, 111, 110, 32, 75, 105, 34, 228, 117, 34, 67, 101,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        34, 55, 56, 34, 71, 105, 32, 110, 117, 52, 103, 101,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        110, 32, 100, 117, 54, 77, 97, 114, 33, 114, 117, 33,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        118, 111, 33, 106, 117, 13, 8467, 34, 98, 115, 54, 117,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        104, 112, 219, 70, 111, 116, 111, 67, 111, 110, 116,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        101, 115, 116, 32, 67, 112, 54, 116, 111, 114, 54, 114,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        101, 97, 32, 122, 105, 74, 107, 97, 110, 110, 30, 108,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        108, 9, 63, 8, 251, 8, 190, 32, 109, 112, 33, 108, 110,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        54, 83, 112, 105, 31, 117, 115, 30, 115, 116, 33, 114,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        102, 13, 6, 13, 143, 32, 102, 102, 32, 115, 104, 33,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        52, 52, 33, 73, 99, 52, 104, 97, 116, 32, 106, 97, 54,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        46, 119, 95, 12, 20, 8, 103, 32, 50, 55, 34, 65, 114,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        13, 1108, 33, 252, 98, 31, 105, 101, 30, 49, 48, 54,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                        85, 110, 100, 54, 105, 101, 115, 33, 57, 49, 14, 182,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        15, 233, 16, 216, 18, 331, 18, 9600, 17, 231, 34, 73,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        73, 32, 103, 111, 33, 111, 98, 12, 39, 219, 107, 110,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        117, 100, 100, 101, 108, 115, 46, 100, 101, 8, 120, 10,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        91, 53, 110, 103, 101, 33, 108, 116, 34, 56, 56, 34,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        90, 105, 32, 78, 97, 32, 70, 97, 10, 93, 8, 188, 10,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        228, 53, 97, 117, 115, 74, 115, 105, 99, 104, 72, 105,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        99, 111, 110, 9, 54, 12, 9608, 33, 71, 114, 32, 112,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        111, 31, 51, 48, 7, 62, 52, 83, 99, 104, 54, 112, 97,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        114, 33, 101, 121, 33, 71, 97, 54, 78, 111, 114, 93,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        109, 97, 102, 105, 97, 30, 49, 50, 33, 74, 97, 33, 115,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        252, 15, 184, 15, 138, 15, 27, 15, 135, 34, 246, 110,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        54, 109, 97, 103, 52, 118, 101, 114, 32, 71, 101, 11,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        164, 31, 50, 50, 33, 97, 103, 34, 55, 50, 14, 144, 15,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        244, 15, 136, 53, 104, 97, 108, 31, 50, 49, 32, 114,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        111, 33, 80, 115, 34, 53, 57, 34, 70, 117, 31, 108, 97,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        32, 54, 48, 11, 80, 53, 83, 116, 117, 33, 109, 117, 34,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        65, 97, 34, 54, 50, 7, 110, 7, 58, 32, 100, 116, 54,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        79, 78, 76, 33, 57, 50, 94, 124, 47, 103, 111, 32, 136,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        67, 104, 97, 110, 110, 101, 108, 53, 98, 101, 105, 32,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        72, 105, 9, 2, 9, 56, 9, 102, 52, 50, 48, 48, 34, 102,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        111, 34, 104, 109, 54, 114, 111, 115, 32, 103, 108, 8,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        48, 33, 52, 57, 54, 101, 110, 115, 32, 51, 52, 54, 115,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        119, 104, 33, 98, 116, 34, 72, 80, 18, 211, 18, 9618,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        18, 199, 18, 209, 17, 8730, 17, 8595, 15, 226, 16, 177,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        16, 926, 15, 132, 54, 66, 97, 100, 31, 101, 100, 12,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        15, 54, 116, 100, 101, 74, 46, 112, 110, 103, 9, 100,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        33, 109, 98, 33, 107, 110, 32, 68, 97, 32, 105, 114,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        54, 71, 105, 114, 75, 50, 48, 48, 57, 29, 48, 48, 53,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        80, 114, 105, 54, 66, 114, 101, 33, 84, 101, 34, 86,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                        101, 34, 53, 52, 33, 83, 104, 53, 87, 104, 111, 33,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        102, 116, 33, 78, 101, 32, 88, 120, 94, 74, 97, 109,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        101, 115, 32, 67, 108, 32, 109, 111, 54, 97, 110, 103,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        12, 204, 33, 87, 117, 33, 48, 52, 9, 57, 74, 48, 48,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                        54, 53, 34, 67, 72, 34, 99, 105, 33, 103, 104, 31, 107,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        101, 33, 117, 114, 33, 97, 107, 33, 105, 97, 33, 119,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        117, 94, 112, 105, 99, 115, 47, 52, 100, 101, 110, 32,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                        76, 111, 53, 115, 116, 97, 34, 71, 66, 55, 115, 98,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        117, 34, 111, 104, 34, 113, 117, 32, 83, 97, 31, 108,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        105, 9, 97, 10, 79, 33, 70, 101, 34, 120, 121, 18, 163,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        18, 1086, 17, 154, 16, 169, 17, 247, 17, 9559, 18,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        9472, 18, 8220, 18, 173, 18, 189, 15, 171, 17, 9562,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        18, 203, 18, 242, 17, 165, 17, 243, 74, 110, 105, 99,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        104, 54, 98, 101, 115, 33, 116, 99, 12, 172, 12, 9829,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        53, 109, 101, 110, 32, 83, 116, 52, 98, 117, 114, 31,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        114, 116, 33, 57, 51, 33, 87, 97, 33, 84, 105, 33, 48,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                        55, 32, 103, 97, 33, 100, 115, 34, 57, 57, 34, 77, 117,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        51, 115, 99, 104, 33, 74, 111, 54, 72, 101, 114, 34,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        103, 103, 34, 118, 98, 33, 105, 98, 53, 101, 110, 116,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        34, 56, 55, 34, 121, 97, 33, 108, 102, 32, 111, 114,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                        33, 101, 98, 33, 97, 119, 11, 18, 32, 116, 122, 29, 99,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        104, 33, 114, 108, 159, 46, 115, 104, 97, 100, 111,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        119, 95, 32, 115, 112, 33, 116, 111, 33, 111, 111, 11,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        42, 30, 49, 53, 9, 111, 34, 110, 102, 34, 56, 54, 33,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        57, 53, 54, 73, 78, 69, 33, 83, 105, 74, 70, 111, 116,</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        111, 33, 121, 115, 34, 57, 54, 15, 26, 15, 31, 15, 152,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        16, 225, 17, 212, 18, 1111, 18, 236, 7, 114, 52, 105,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        115, 116, 54, 76, 97, 100, 54, 77, 111, 109, 33, 84,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        104, 54, 80, 114, 111, 32, 107, 97, 32, 67, 104, 31,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        110, 105, 30, 115, 115, 73, 46, 109, 121, 95, 32, 118,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        105, 54, 77, 111, 110, 33, 112, 105, 33, 81, 102, 34,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        111, 99, 34, 115, 103, 34, 84, 97, 34, 116, 119, 34,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                        105, 102, 34, 122, 122, 31, 110, 97, 33, 65, 117, 33,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                        97, 105, 158, 75, 110, 117, 100, 100, 101, 108, 115,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        10, 88, 71, 176, 62, 95, 104, 35, 117, 103, 35, 77,</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                        121, 34, 80, 101, 34, 101, 120, 34, 78, 111, 32, 75,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        97, 32, 110, 111, 34, 120, 116, 34, 104, 112, 34, 107,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        114, 34, 80, 117, 30, 49, 56, 9, 82, 53, 83, 105, 110,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        32, 65, 110, 34, 82, 105, 55, 115, 101, 108, 54, 98,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                        101, 97, 33, 86, 111, 34, 97, 104, 34, 81, 117, 7, 43,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                        10, 99, 33, 116, 115, 33, 84, 114, 32, 87, 101, 10, 76,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        241, 105, 99, 111, 110, 95, 103, 101, 110, 100, 101,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                        114, 95, 31, 109, 101, 53, 46, 104, 95, 54, 119, 119,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        119, 34, 121, 111, 34, 104, 117, 255, 12, 10, 124, 47,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        102, 111, 116, 111, 119, 104, 111, 105, 115, 32, 34,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                        53, 109, 105, 116, 32, 115, 111, 8, 11, 52, 70, 114,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        101, 54, 109, 97, 120, 54, 114, 101, 103, 33, 86, 97,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                        54, 119, 101, 114, 10, 117, 54, 119, 105, 101, 117,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                        105, 99, 111, 110, 115, 47, 33, 69, 110, 15, 9552, 16,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                        149, 16, 215, 14, 159, 34, 106, 111, 7, 37, 220, 50,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        53, 53, 44, 50, 53, 53, 44, 50, 53, 53, 32, 101, 105,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        33, 100, 114, 33, 105, 112, 32, 68, 117, 34, 107, 102,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        34, 53, 55, 33, 80, 108, 31, 108, 111, 53, 83, 116, 97,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        14, 945, 15, 29, 17, 964, 17, 210, 16, 145, 34, 69, 82,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        33, 107, 117, 32, 108, 115, 54, 97, 99, 116, 33, 70,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        114, 10, 92, 255, 19, 11, 102, 111, 116, 111, 115, 47,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        107, 110, 117, 100, 100, 101, 108, 115, 46, 100, 101,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        63, 110, 61, 11, 72, 50, 32, 32, 32, 33, 76, 117, 54,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        100, 101, 109, 53, 101, 110, 100, 35, 66, 252, 35, 97,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        112, 34, 55, 52, 54, 99, 104, 108, 53, 103, 108, 101,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        30, 52, 48, 9, 33, 30, 51, 50, 52, 101, 105, 110, 53,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        115, 101, 105, 33, 75, 101, 12, 223, 32, 102, 103, 53,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        98, 97, 108, 31, 116, 97, 30, 49, 57, 52, 110, 100,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                        101, 54, 77, 101, 110, 54, 76, 105, 101, 32, 97, 100,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        31, 83, 102, 10, 167, 30, 105, 110, 35, 101, 99, 15,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        30, 16, 8249, 17, 221, 18, 166, 18, 234, 14, 953, 35,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                        72, 252, 33, 111, 115, 32, 114, 110, 74, 46, 109, 120,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        95, 53, 119, 101, 105, 30, 46, 46, 54, 108, 101, 114,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        33, 114, 107, 11, 113, 34, 116, 102, 34, 85, 110, 33,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        80, 111, 53, 86, 101, 114, 9, 112, 7, 47, 12, 125, 35,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        100, 119, 15, 1109, 16, 146, 16, 235, 34, 97, 122, 33,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        108, 117, 33, 70, 105, 33, 107, 108, 33, 119, 111, 32,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        56, 48, 255, 32, 9, 0, 112, 0, 66, 0, 112, 105, 99,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        115, 47, 105, 99, 111, 110, 95, 102, 117, 108, 108, 67,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        104, 97, 110, 110, 101, 108, 46, 103, 105, 102, 0, 45,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        0, 30, 101, 108, 31, 116, 121, 54, 78, 101, 117, 34,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        53, 50, 34, 108, 109, 32, 48, 49, 113, 124, 47, 119,</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        32, 34, 60, 180, 46, 113, 117, 97, 100, 99, 117, 116,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        95, 35, 54, 57, 35, 100, 228, 34, 116, 117, 54, 102,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        114, 101, 34, 105, 104, 35, 101, 122, 35, 57, 56, 31,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        116, 101, 53, 103, 105, 114, 53, 99, 110, 116, 158, 46,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                        98, 111, 114, 100, 101, 114, 95, 32, 105, 116, 11, 89,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                        255, 14, 11, 102, 117, 108, 108, 67, 104, 97, 110, 110,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        101, 108, 46, 103, 105, 102, 34, 122, 111, 34, 107, 99,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        34, 65, 98, 15, 965, 18, 9642, 19, 9577, 19, 8494, 17,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        202, 16, 141, 35, 56, 50, 32, 51, 51, 31, 110, 100, 10,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        70, 32, 83, 112, 11, 94, 54, 97, 99, 104, 33, 117, 99,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        32, 107, 105, 52, 105, 99, 104, 55, 102, 101, 108, 35,</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        56, 51, 15, 191, 15, 219, 33, 98, 114, 54, 70, 114,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                        105, 54, 100, 111, 114, 31, 100, 101, 31, 53, 48, 33,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        97, 97, 34, 103, 98, 34, 108, 99, 54, 102, 252, 114,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        33, 55, 53, 32, 116, 104, 53, 66, 101, 114, 54, 66, 97,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        108, 33, 55, 48, 33, 52, 53, 34, 83, 119, 34, 52, 49,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                        32, 105, 108, 54, 104, 102, 108, 34, 73, 104, 13, 126,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                        255, 14, 10, 112, 105, 99, 115, 47, 102, 101, 109, 97,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                        108, 101, 46, 103, 105, 102, 53, 104, 116, 116, 16,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                        9834, 18, 161, 18, 232, 18, 305, 19, 8212, 62, 92, 92,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        92, 20, 1241, 15, 183, 35, 65, 116, 35, 76, 69, 35, 83,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        107, 75, 50, 48, 49, 48, 71, 46, 103, 105, 102, 74,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        102, 111, 116, 111, 54, 76, 97, 110, 13, 19, 34, 105,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        107, 199, 176, 62, 103, 116, 46, 103, 105, 102, 60,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        176, 32, 72, 111, 34, 100, 121, 34, 80, 105, 54, 97,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        108, 116, 32, 50, 56, 74, 46, 106, 112, 103, 7, 101, 8,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        115, 32, 69, 108, 54, 109, 101, 114, 255, 14, 12, 109,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                        97, 108, 101, 46, 98, 46, 109, 121, 95, 51, 46, 103,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                        105, 102, 136, 0, 70, 108, 105, 114, 116, 32, 14, 1103,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                        35, 55, 54, 34, 110, 98, 33, 76, 97, 32, 110, 115, 33,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                        114, 103, 33, 48, 56, 32, 66, 101, 11, 118, 34, 109,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                        108, 35, 99, 100, 35, 55, 51, 33, 66, 117, 32, 116,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        114, 32, 119, 105, 31, 109, 109, 33, 115, 102, 54, 68,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        105, 101, 32, 110, 116, 32, 108, 121, 33, 101, 109, 54,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                        116, 109, 117, 34, 111, 100, 34, 115, 100, 54, 75, 105,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                        115, 34, 68, 68, 16, 151, 17, 168, 17, 206, 15, 951,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                        35, 54, 56, 12, 81, 31, 103, 101, 35, 56, 52, 35, 70,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                        67, 34, 103, 115, 33, 82, 97, 33, 115, 117, 34, 105,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                        118, 35, 104, 104, 35, 80, 114, 7, 60, 31, 104, 97, 31,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                        111, 110, 10, 84, 52, 99, 104, 101, 8, 104, 7, 34, 255,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                        13, 12, 99, 108, 111, 117, 100, 115, 98, 108, 117, 101,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        46, 103, 105, 102, 34, 67, 105, 13, 3, 55, 108, 105,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                        103, 14, 23, 16, 142, 16, 150, 18, 241, 18, 253, 18,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        174, 18, 1091, 19, 942, 19, 304, 19, 322, 19, 324, 17,</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                        961, 33, 98, 98, 53, 98, 101, 114, 32, 76, 105, 33, 68,</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                        105, 13, 175, 34, 108, 103, 33, 65, 108, 54, 79, 117,</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                        116, 32, 50, 52, 32, 117, 110, 32, 51, 57, 55, 117,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                        114, 116, 35, 73, 115, 35, 82, 102, 33, 55, 49, 33,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        104, 108, 33, 66, 108, 32, 66, 97, 53, 101, 97, 114,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                        54, 101, 99, 104, 34, 85, 115, 34, 52, 55, 54, 105,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        112, 105, 12, 59, 32, 122, 101, 7, 46, 9, 55, 31, 97,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        116, 34, 119, 228, 35, 72, 117, 15, 8706, 16, 186, 17,</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        240, 17, 65273, 33, 223, 101, 33, 117, 116, 33, 102,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        117, 73, 62, 45, 45, 60, 31, 97, 110, 32, 76, 101, 32,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                        115, 97, 13, 4, 34, 103, 116, 33, 106, 101, 53, 112,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        119, 100, 32, 82, 101, 32, 104, 101, 32, 104, 111, 34,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                        111, 109, 34, 111, 107, 33, 53, 53, 52, 119, 97, 114,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        53, 104, 101, 110, 34, 112, 101, 35, 101, 107, 35, 76,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                        76, 33, 98, 117, 31, 114, 101, 34, 119, 252, 34, 54,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                        54, 33, 83, 101, 11, 90, 33, 252, 99, 34, 67, 114, 34,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                        103, 117, 32, 122, 117, 12, 74, 34, 109, 228, 34, 52,</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        50, 33, 98, 111, 33, 67, 97, 31, 101, 115, 54, 84, 97,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                        103, 35, 82, 82, 35, 114, 121, 13, 5, 32, 50, 54, 34,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                        114, 114, 34, 111, 102, 54, 68, 111, 114, 53, 114, 101,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        115, 53, 99, 103, 105, 33, 100, 100, 255, 57, 12, 124,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        104, 116, 116, 112, 58, 47, 47, 119, 119, 119, 51, 46,</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                        107, 110, 117, 100, 100, 101, 108, 115, 46, 100, 101,</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        58, 56, 48, 56, 48, 47, 116, 120, 116, 108, 47, 99,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        108, 105, 99, 107, 63, 100, 61, 107, 110, 117, 100,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                        100, 101, 108, 115, 46, 100, 101, 38, 105, 100, 61, 33,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        83, 109, 34, 52, 51, 34, 97, 102, 53, 105, 110, 101,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                        33, 67, 111, 18, 170, 18, 179, 17, 931, 16, 137, 15,</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                        187, 35, 67, 69, 34, 108, 107, 32, 97, 109, 32, 112,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        112, 33, 115, 119, 35, 54, 51, 35, 109, 121, 35, 112,</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        102, 17, 156, 17, 230, 16, 140, 15, 28, 54, 102, 104,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                        101, 13, 8, 34, 86, 105, 53, 116, 101, 114, 10, 255,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        31, 49, 49, 33, 102, 97, 35, 115, 114, 35, 77, 102, 13,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                        16, 96, 176, 62, 115, 109, 95, 54, 65, 110, 122, 10,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        65, 32, 97, 115, 35, 78, 82, 35, 108, 114, 35, 78, 84,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                        35, 54, 49, 33, 110, 122, 33, 97, 98, 33, 103, 105, 54,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                        100, 112, 103, 33, 103, 114, 9, 40, 255, 12, 10, 112,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                        105, 99, 115, 47, 109, 97, 108, 101, 46, 103, 105, 102,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                        32, 112, 103, 35, 67, 117, 19, 948, 19, 962, 19, 1754,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        19, 8596, 18, 1110, 18, 9658, 17, 1750, 19, 273, 19,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        295, 19, 423, 19, 1753, 18, 957, 18, 1089, 17, 207, 17,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        237, 18, 9679, 18, 8221, 34, 79, 115, 33, 111, 119, 31,</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        99, 107, 11, 229, 32, 72, 97, 35, 103, 100, 35, 73,</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                        116, 34, 107, 116, 54, 108, 101, 110, 33, 69, 105, 13,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        7, 34, 102, 114, 10, 67, 9, 41, 54, 109, 105, 110, 54,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                        83, 105, 101, 12, 123, 34, 54, 53, 34, 77, 252, 11,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        246, 35, 78, 252, 35, 68, 111, 34, 105, 111, 33, 80,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        102, 54, 100, 97, 115, 12, 86, 95, 70, 108, 105, 114,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        116, 11, 252, 34, 114, 122, 35, 71, 117, 35, 102, 109,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                        54, 72, 97, 109, 8, 116, 29, 101, 110, 29, 101, 114, 4,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        0, 52, 100, 101, 114, 33, 67, 99, 54, 65, 108, 116, 53,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        77, 105, 120, 35, 65, 115, 35, 116, 112, 55, 110, 101,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        110, 33, 108, 100, 32, 48, 53, 31, 105, 115, 11, 195,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        34, 76, 252, 15, 1752, 15, 1761, 15, 1762, 15, 162, 54,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                        71, 101, 115, 54, 97, 117, 102, 54, 97, 110, 100, 54,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        98, 108, 103, 33, 112, 114, 52, 117, 110, 100, 31, 97,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                        108, 34, 73, 110, 34, 87, 252, 54, 104, 105, 101, 54,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        103, 101, 115, 34, 246, 223, 34, 112, 115, 31, 98, 101,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                        32, 50, 53, 54, 49, 52, 48, 35, 104, 115, 16, 969, 16,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                        239, 16, 147, 16, 963, 34, 52, 54, 10, 128, 31, 49, 52,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                        32, 51, 53, 33, 69, 109, 54, 103, 101, 114, 31, 99,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                        103, 10, 107, 6, 45, 34, 119, 104, 35, 114, 112, 17,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                        148, 18, 923, 18, 155, 16, 9553, 16, 129, 17, 208, 19,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                        287, 19, 399, 19, 9632, 19, 9668, 33, 80, 97, 11, 85,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                        32, 98, 108, 33, 99, 97, 54, 118, 97, 116, 33, 51, 55,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                        34, 101, 117, 34, 109, 115, 33, 77, 105, 33, 99, 115,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                        53, 100, 105, 101, 33, 97, 121, 33, 102, 105, 10, 192,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                        32, 117, 109, 53, 115, 101, 110, 9, 61, 33, 66, 114,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        34, 117, 108, 34, 102, 121, 53, 118, 111, 114, 33, 87,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                        108, 54, 116, 115, 99, 32, 114, 100, 31, 110, 101, 34,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        75, 117, 15, 949, 15, 1090, 35, 82, 252, 54, 80, 97,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        114, 35, 56, 53, 35, 119, 99, 34, 99, 114, 33, 114,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                        109, 8, 49, 6, 95, 4, 32 });</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        encoder = <span class="keyword">new</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_encoder.html">HuffmanEncoder</a>(tree);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        decoder = <span class="keyword">new</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_decoder.html">HuffmanDecoder</a>(tree);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_encoder.html">HuffmanEncoder</a> getEncoder() {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span> encoder;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classtools_1_1huffman_1_1_huffman_decoder.html">HuffmanDecoder</a> getDecoder() {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> decoder;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_72e2df0cf5b2aa59301d514353ebd602.html">BananaChat</a></li><li class="navelem"><a class="el" href="dir_5d56c3902b6c3876ba9a289736f7bf21.html">bananachat</a></li><li class="navelem"><a class="el" href="dir_a67b31aae4bf7d2489fd88929bc9d6bd.html">src</a></li><li class="navelem"><a class="el" href="dir_419c250f22f702f3d386a0a775afd064.html">tools</a></li><li class="navelem"><a class="el" href="dir_4b8ca0d4addf73bee6a98ed27f5af502.html">huffman</a></li><li class="navelem"><b>Huffman.java</b></li>
+    <li class="footer">Erzeugt am Fre Jan 25 2013 16:49:51 für BananaChat von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

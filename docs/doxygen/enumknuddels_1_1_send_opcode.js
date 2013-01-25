@@ -1,0 +1,26 @@
+var enumknuddels_1_1_send_opcode =
+[
+    [ "getValue", "enumknuddels_1_1_send_opcode.html#ae89fb6ac6c42bdc2226a7c09b17e51dc", null ],
+    [ "ACTION", "enumknuddels_1_1_send_opcode.html#a7e899b0d36f14c351c819dcd9446f767", null ],
+    [ "ADD_ICON", "enumknuddels_1_1_send_opcode.html#a6391be09ba48670ba4daa5489e95e339", null ],
+    [ "ADD_USER", "enumknuddels_1_1_send_opcode.html#abd93283ba04fd25229dbfec82ea8c663", null ],
+    [ "BUTLER", "enumknuddels_1_1_send_opcode.html#af322b9bdb0be1e026425bcbb6aa6113b", null ],
+    [ "CHANNEL_FRAME", "enumknuddels_1_1_send_opcode.html#a79cb5b7d3222a2abdce6dd79c0d4bf68", null ],
+    [ "CHANNEL_LIST", "enumknuddels_1_1_send_opcode.html#a46bad661deed744c6d4c18ba0963c317", null ],
+    [ "HELLO", "enumknuddels_1_1_send_opcode.html#a363497910ca312e839bc1b146d475b66", null ],
+    [ "KICK", "enumknuddels_1_1_send_opcode.html#ac72cf0d5509b01544208e2b446180de1", null ],
+    [ "MODULE", "enumknuddels_1_1_send_opcode.html#a57f4278adf14be9727a05a6dfd478a8f", null ],
+    [ "OPEN_URL", "enumknuddels_1_1_send_opcode.html#a55af1448eb88bf618a0e7a7bca1bb90b", null ],
+    [ "PLAY_MP3", "enumknuddels_1_1_send_opcode.html#ae244ff30b9f25d961c9b74b009362448", null ],
+    [ "PLAY_SOUND", "enumknuddels_1_1_send_opcode.html#a850117bb99401b457e2ad7d069a55851", null ],
+    [ "PONG", "enumknuddels_1_1_send_opcode.html#ae82f2a8caf32d189e61057b95532f99a", null ],
+    [ "POPUP", "enumknuddels_1_1_send_opcode.html#ad3c604038b13d5753e221a4dc3e8d245", null ],
+    [ "PRIVATE_MESSAGE", "enumknuddels_1_1_send_opcode.html#a499f687126b1acd8c877c3e6026defaa", null ],
+    [ "PUBLIC_MESSAGE", "enumknuddels_1_1_send_opcode.html#a3cf361af63d6716dbe578c2307d01706", null ],
+    [ "REMOVE_ICON", "enumknuddels_1_1_send_opcode.html#a68aeb6ef9aa44983593692cb267db903", null ],
+    [ "REMOVE_USER", "enumknuddels_1_1_send_opcode.html#a4e5b0fda296873119654465262870545", null ],
+    [ "SWITCH_CHANNEL", "enumknuddels_1_1_send_opcode.html#a27b4cd6b2e089fc336fa1378fbb1c854", null ],
+    [ "UPDATE_CHANNEL_BACKGROUND", "enumknuddels_1_1_send_opcode.html#a2bf1f6b6224bfe93b79380574cc3bf63", null ],
+    [ "UPDATE_CHANNEL_SETTINGS", "enumknuddels_1_1_send_opcode.html#a1f56c7d1980c65f3751400fcde490e0f", null ],
+    [ "USER_LIST", "enumknuddels_1_1_send_opcode.html#afce9faf9a14a5591de34ca4e99ad240e", null ]
+];

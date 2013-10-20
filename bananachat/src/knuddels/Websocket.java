@@ -36,17 +36,28 @@ public class Websocket extends WebSocketServer {
 	}
 
 	@Override
-	public void onError(WebSocket socket, Exception arg1) {
+	public void onError(WebSocket socket, Exception e) {
 		/* Do Nothing */
+		e.printStackTrace();
 	}
 
 	@Override
-	public void onMessage(WebSocket socket, String arg1) {
-		// TODO Auto-generated method stub
+	public void onMessage(WebSocket socket, String decoded) {
+		SessionHandler handler	= new SessionHandler(null);
+		Client client			= Server.get().getClient(socket);
+		
+		// Client does not exists
+		if(client == null) {
+			client = new Client(null);
+			client.setToWebsocket(socket);
+			Server.get().addClient(client);
+		}
+		
+		handler.read(client, decoded);
 	}
 
 	@Override
 	public void onOpen(WebSocket socket, ClientHandshake arg1) {
-		// TODO Auto-generated method stub
+		/* Do Nothing */
 	}
 }

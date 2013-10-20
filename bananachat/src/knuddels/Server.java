@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verï¿½ndert, aber weder in andere Projekte eingefï¿½gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -24,6 +24,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import org.java_websocket.WebSocket;
 
 import tools.database.ConnectionPool;
 import tools.database.PoolConnection;
@@ -77,6 +79,18 @@ public class Server {
 			clients.put(client.getName().toLowerCase(), client);
 		}
 	}
+	
+	public Client getClient(WebSocket socket) {
+		synchronized (clients) {
+			for(Client client : clients.values()) {
+				if(client.hasWebsocket(socket)) {
+					return client;
+				}
+			}
+		}
+		
+		return null;
+	}
 
 	public void removeClient(String name) {
 		synchronized (clients) {
@@ -98,7 +112,7 @@ public class Server {
 		while (it.hasNext()) {
 			String code = it.next();
 			message = message.replace(code,
-					String.format("°>%s<°", smileys.get(code)));
+					String.format("ï¿½>%s<ï¿½", smileys.get(code)));
 		}
 
 		return message;
@@ -164,7 +178,7 @@ public class Server {
 			ServerSocket listener = new ServerSocket(port);
 			
 			try {
-				Websocket wss = new Websocket(wss_port);
+				new Websocket(wss_port).start();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

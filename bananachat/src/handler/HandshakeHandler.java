@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verï¿½ndert, aber weder in andere Projekte eingefï¿½gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion

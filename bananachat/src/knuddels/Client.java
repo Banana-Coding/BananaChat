@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verï¿½ndert, aber weder in andere Projekte eingefï¿½gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -72,19 +72,24 @@ public class Client {
 		}
 	}
 	
-	public void setToWebsocket(WebSocket socket) {
+	public Client setToWebsocket(WebSocket socket) {
 		channels = new ArrayList<Channel>();
 		this.socket = null;
 		this.websocket = socket;
 
-		if (websocket == null) {
-			return;
+		if(websocket == null) {
+			return null;
 		}
+		
+		// temporary Name
+		this.name = String.format("WebSocket Client #%s", socket.getLocalSocketAddress().hashCode());
 
 		/*try {
 			out = websocket;
 		} catch (IOException e) {
 		}*/
+		
+		return this;
 	}
 
 	public List<Pair<String, Integer>> getIcons() {
@@ -444,8 +449,16 @@ public class Client {
 	public void send(String message) {
 		if (socket != null && socket.isConnected()) {
 			try {
-				out.write(Protocol.encode(Huffman.getEncoder().encode(message,
-						0)));
+				out.write(Protocol.encode(Huffman.getEncoder().encode(message, 0)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		// Send over WebSocket
+		if(websocket != null && websocket.isOpen()) {
+			try {
+				websocket.send(message);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

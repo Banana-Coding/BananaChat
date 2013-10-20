@@ -24,13 +24,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 import tools.database.ConnectionPool;
 import tools.database.PoolConnection;
 
 /**
  * 
  * @author Flav
- * @since 1.0
+ * @author Bizzi
+ * @since 1.1
  */
 public class Server {
 	private final static Server instance;
@@ -157,11 +159,18 @@ public class Server {
 		}
 	}
 
-	private void listen(int port) {
+	private void listen(int port, int wss_port) {
 		try {
 			ServerSocket listener = new ServerSocket(port);
-			System.out.println(String.format("Listening on port %s", port));
-
+			
+			try {
+				Websocket wss = new Websocket(wss_port);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println(String.format("Listening on port %s (Websocket: %s)", port, wss_port));
+			
 			while (true) {
 				Socket socket = listener.accept();
 				new SessionHandler(socket).start();
@@ -173,14 +182,17 @@ public class Server {
 
 	public static void main(String[] args) {
 		int port;
-
+		int wss_port;
+		
 		if (args.length > 0) {
 			port = Integer.parseInt(args[0]);
+			wss_port = Integer.parseInt(args[1]);
 		} else {
 			port = 2710; // default
+			wss_port = 2711;
 		}
 
 		instance.loadConfigs();
-		instance.listen(port);
+		instance.listen(port, wss_port);
 	}
 }

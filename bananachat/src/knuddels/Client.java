@@ -22,6 +22,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import org.java_websocket.WebSocket;
+
 import tools.KCodeParser;
 import tools.PacketCreator;
 import tools.Pair;
@@ -35,8 +38,9 @@ import tools.huffman.Huffman;
  * @since 1.0
  */
 public class Client {
-	private final List<Channel> channels;
-	private final Socket socket;
+	private List<Channel> channels;
+	private Socket socket;
+	private WebSocket websocket;
 	private OutputStream out;
 	private List<Pair<String, Integer>> icons;
 	private String name;
@@ -56,7 +60,8 @@ public class Client {
 	public Client(Socket socket) {
 		channels = new ArrayList<Channel>();
 		this.socket = socket;
-
+		this.websocket = null;
+		
 		if (socket == null) {
 			return;
 		}
@@ -65,6 +70,21 @@ public class Client {
 			out = socket.getOutputStream();
 		} catch (IOException e) {
 		}
+	}
+	
+	public void setToWebsocket(WebSocket socket) {
+		channels = new ArrayList<Channel>();
+		this.socket = null;
+		this.websocket = socket;
+
+		if (websocket == null) {
+			return;
+		}
+
+		/*try {
+			out = websocket;
+		} catch (IOException e) {
+		}*/
 	}
 
 	public List<Pair<String, Integer>> getIcons() {
@@ -442,5 +462,13 @@ public class Client {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public boolean hasWebsocket(WebSocket socket) {
+		if(socket != null && socket == this.websocket) {
+			return true;
+		}
+		
+		return false;
 	}
 }

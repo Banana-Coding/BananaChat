@@ -12,6 +12,9 @@
 
 package knuddels;
 import java.net.InetSocketAddress;
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
@@ -28,11 +31,10 @@ public class Websocket extends WebSocketServer {
 
 	@Override
 	public void onClose(WebSocket socket, int arg1, String arg2, boolean arg3) {
-		for(Client c : Server.get().getClients()) {
-			if(c.hasWebsocket(socket)) {
-				c.disconnect();
-			}
-		}
+		Client c = Server.get().getClient(socket);
+		c.disconnect();
+		
+		Server.get().removeClient(socket);
 	}
 
 	@Override

@@ -97,6 +97,21 @@ public class Server {
 			clients.remove(name.toLowerCase());
 		}
 	}
+	
+	public void removeClient(WebSocket socket) {
+		synchronized (clients) {
+			String name = "";
+			
+			for(Client client : clients.values()) {
+				if(client.hasWebsocket(socket)) {
+					name = client.getName();
+					break;
+				}
+			}
+			
+			clients.remove(name.toLowerCase());
+		}
+	}
 
 	public Channel getChannel(String name) {
 		return channels.get(name.toLowerCase());

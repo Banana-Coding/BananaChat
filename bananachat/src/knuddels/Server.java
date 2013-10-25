@@ -193,6 +193,12 @@ public class Server {
 			ServerSocket listener = new ServerSocket(port);
 			
 			try {
+				new FlashPolicyServer().run();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			try {
 				new Websocket(wss_port).start();
 			} catch (Exception e) {
 				e.printStackTrace();

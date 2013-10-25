@@ -19,12 +19,20 @@ import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
 
+import tools.huffman.Huffman;
+
 /**
  * 
  * @author Bizzi
  * @since 1.0
  */
 public class Websocket extends WebSocketServer {
+	public static boolean huffman			= false;
+	
+	public static boolean withHuffman() {
+		return huffman;
+	}
+	
 	public Websocket(int port) throws Exception {
         super(new InetSocketAddress(port));
     }
@@ -32,15 +40,18 @@ public class Websocket extends WebSocketServer {
 	@Override
 	public void onClose(WebSocket socket, int arg1, String arg2, boolean arg3) {
 		Client c = Server.get().getClient(socket);
-		c.disconnect();
+		if(c != null) {
+			c.disconnect();
+		}
 		
-		Server.get().removeClient(socket);
+		if(socket != null) {
+			Server.get().removeClient(socket);
+		}
 	}
 
 	@Override
 	public void onError(WebSocket socket, Exception e) {
 		/* Do Nothing */
-		e.printStackTrace();
 	}
 
 	@Override
@@ -55,7 +66,7 @@ public class Websocket extends WebSocketServer {
 			Server.get().addClient(client);
 		}
 		
-		handler.read(client, decoded);
+		handler.read(client, (withHuffman() ? Huffman.getDecoder().decode(decoded.getBytes()) : decoded));
 	}
 
 	@Override

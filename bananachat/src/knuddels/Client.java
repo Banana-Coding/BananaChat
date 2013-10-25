@@ -458,7 +458,7 @@ public class Client {
 		// Send over WebSocket
 		if(websocket != null && websocket.isOpen()) {
 			try {
-				websocket.send(message);
+				websocket.send(Websocket.withHuffman() ? new String(Huffman.getEncoder().encode(message, 0)) : message);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

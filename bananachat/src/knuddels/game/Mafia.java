@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver둵dert, aber weder in andere Projekte eingef웗t noch
+ * darf ver채ndert, aber weder in andere Projekte eingef체gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels.game;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +60,7 @@ public class Mafia implements Game, Runnable {
 			synchronized (players) {
 				if (players.size() < 5) {
 					channel.broadcastButlerMessage(String
-							.format("Noch k철nnen wir leider nicht anfangen. Wir haben _erst %s Spieler_, brauchen aber _mindestens 5 Spieler_. Wer kein Angsthase ist, meldet sich bei mir 째R째privat째째.",
+							.format("Noch k철nnen wir leider nicht anfangen. Wir haben _erst %s Spieler_, brauchen aber _mindestens 5 Spieler_. Wer kein Angsthase ist, meldet sich bei mir 째R째privat째r째.",
 									players.size()));
 					status++;
 				} else {

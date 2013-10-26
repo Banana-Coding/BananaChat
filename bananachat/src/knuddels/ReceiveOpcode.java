@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -18,9 +18,19 @@ package knuddels;
  * @since 1.0
  */
 public enum ReceiveOpcode {
-	EXCEPTION("1"), DISCONNECT("d"), CHAT("e"), PING("h"), POLL("iv"), LINK_CLICKED(
-			"j"), JOIN_CHANNEL("n"), Q_TOKEN("q"), REQUEST_USER_LIST("r"), HANDSHAKE(
-			"t"), REQUEST_HELP("u"), LEAVE_CHANNEL("w"), WHOIS("whois");
+	EXCEPTION("1"),
+	DISCONNECT("d"),
+	CHAT("e"),
+	PING("h"),
+	POLL("iv"),
+	LINK_CLICKED("j"),
+	JOIN_CHANNEL("n"),
+	Q_TOKEN("q"),
+	REQUEST_USER_LIST("r"),
+	HANDSHAKE("t"),
+	REQUEST_HELP("u"),
+	LEAVE_CHANNEL("w"),
+	WHOIS("whois");
 
 	private String opcode;
 

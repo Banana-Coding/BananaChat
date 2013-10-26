@@ -1,14 +1,16 @@
 /* Banana-Chat - The first Open Source Knuddels Emulator
+ * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
- * Diese Datei wurde von Flav aus dem Chatapplet von Knuddels.de extrahiert und
- * unterliegt damit dem Copyright der Knuddels GmbH & Co. KG. 
- * Die Nutzung geschieht daher auf eigene Gefahr.
- * 
- * Zu finden auf: http://banana-coding.com/board7-inoffizielle-releases/390-huffman/
+ * Diese Datei unterliegt dem Copyright von Banana-Coding und
+ * darf verändert, aber weder in andere Projekte eingefügt noch
+ * reproduziert werden.
+ *
+ * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
+ * stammt - nur zu Lernzwecken, das Hosten des originalen Clients
+ * ist untersagt und wird der Knuddels GmbH gemeldet.
  */
 
 package tools.huffman;
-
 import java.util.Hashtable;
 
 /**

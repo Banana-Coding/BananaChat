@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver�ndert, aber weder in andere Projekte eingef�gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,13 +11,10 @@
  */
 
 package knuddels;
-
 import handler.*;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
-
 import tools.huffman.Huffman;
 
 /**
@@ -43,7 +40,14 @@ public class SessionHandler extends Thread {
 			if (type == 0x00) {
 				while (true) {
 					byte[] buffer	= Protocol.decode(in);
-					String decoded	= Huffman.getDecoder().decode(buffer);
+					System.err.println(new String(buffer));
+					String decoded;
+					
+					if(Server.get().getHuffman()) {
+						decoded	= Huffman.getDecoder().decode(buffer);
+					} else {
+						decoded = new String(buffer);
+					}
 					read(client, decoded);
 				}
 			} else if (type == 0x02) {
@@ -57,7 +61,7 @@ public class SessionHandler extends Thread {
 	}
 	
 	public void read(Client client, String decoded) {
-		System.out.println("Receive: " + decoded);
+		// System.out.println("Receive: " + decoded.replace("\0", "\\0"));
 		String[] tokens	= decoded.split("\0");
 		String opcode	= tokens[0];
 
@@ -88,7 +92,7 @@ public class SessionHandler extends Thread {
 		} else if (opcode.equals(ReceiveOpcode.WHOIS.getValue())) {
 			/* Do Nothing */
 		} else {
-			System.out.println(String.format("Unhandled opcode: %s", opcode));
+			System.out.println(String.format("Unhandled opcode: '%s'", opcode));			
 		}
 	}
 }

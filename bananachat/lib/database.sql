@@ -72,7 +72,7 @@ CREATE TABLE `channels` (
 /*!40000 ALTER TABLE `channels` DISABLE KEYS */;
 INSERT INTO `channels` (`id`,`name`,`size`,`topic`,`game`,`backgroundImage`,`backgroundPosition`,`style`) VALUES 
  (1,'Lobby',25,NULL,NULL,'pics/kuecke2.gif',36,1),
- (2,'Mafia',14,'Hier kann das spannende und packende Spiel Mafia gespielt werden. Anleitung unbedingt vorher mit °BB>/help mafia|\"<r° lesen. Bis zum nächsten Spielbeginn können nur Mitspieler öffentlich und privat reden.','MAFIA','pics/mjoe.gif',36,2);
+ (2,'Mafia',14,'Hier kann das spannende und packende Spiel Mafia gespielt werden. Anleitung unbedingt vorher mit Â°BB>/help mafia|\"<rÂ° lesen. Bis zum nÃ¤chsten Spielbeginn kÃ¶nnen nur Mitspieler Ã¶ffentlich und privat reden.','MAFIA','pics/mjoe.gif',36,2);
 /*!40000 ALTER TABLE `channels` ENABLE KEYS */;
 
 

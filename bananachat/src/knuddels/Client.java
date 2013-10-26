@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver�ndert, aber weder in andere Projekte eingef�gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -22,9 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.java_websocket.WebSocket;
-
 import tools.KCodeParser;
 import tools.PacketCreator;
 import tools.Pair;
@@ -81,14 +78,8 @@ public class Client {
 			return null;
 		}
 		
-		// temporary Name
 		this.name = String.format("WebSocket Client #%s", socket.getLocalSocketAddress().hashCode());
 
-		/*try {
-			out = websocket;
-		} catch (IOException e) {
-		}*/
-		
 		return this;
 	}
 
@@ -447,9 +438,16 @@ public class Client {
 	}
 
 	public void send(String message) {
+		System.err.println(message);
+		
 		if (socket != null && socket.isConnected()) {
 			try {
-				out.write(Protocol.encode(Huffman.getEncoder().encode(message, 0)));
+				if(Server.get().getHuffman()) {
+					out.write(Protocol.encode(Huffman.getEncoder().encode(message, 0)));
+				} else {
+					out.write(Protocol.encode(message.getBytes()));
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

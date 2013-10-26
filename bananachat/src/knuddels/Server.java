@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver�ndert, aber weder in andere Projekte eingef�gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -42,7 +41,8 @@ public class Server {
 	private Client butler;
 	private Map<String, Channel> channels;
 	private Map<String, String> smileys;
-
+	private boolean huffman = false;
+	
 	static {
 		instance = new Server();
 	}
@@ -127,7 +127,7 @@ public class Server {
 		while (it.hasNext()) {
 			String code = it.next();
 			message = message.replace(code,
-					String.format("�>%s<�", smileys.get(code)));
+					String.format("°>%s<°", smileys.get(code)));
 		}
 
 		return message;
@@ -229,5 +229,9 @@ public class Server {
 
 		instance.loadConfigs();
 		instance.listen(port, wss_port);
+	}
+
+	public boolean getHuffman() {
+		return this.huffman;
 	}
 }

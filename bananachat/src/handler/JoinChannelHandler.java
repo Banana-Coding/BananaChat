@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver�ndert, aber weder in andere Projekte eingef�gt noch
+ * darf verändert, aber weder in andere Projekte eingefügt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package handler;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +37,7 @@ public class JoinChannelHandler {
 			client.send(Popup
 					.create("Problem",
 							"Nickname fehlt",
-							"#Um in den Chat eintreten zu k�nnen, müssen Sie _vorher einen Nick registrieren_.##Klicken Sie dazu auf der Webseite auf folgenden Button:##°>neu_reg.gif<°",
+							"#Um in den Chat eintreten zu können, müssen Sie _vorher einen Nick registrieren_.##Klicken Sie dazu auf der Webseite auf folgenden Button:##°>neu_reg.gif<°",
 							400, 300));
 			return;
 		}

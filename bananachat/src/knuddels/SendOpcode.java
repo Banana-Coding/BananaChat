@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -18,12 +18,28 @@ package knuddels;
  * @since 1.0
  */
 public enum SendOpcode {
-	PLAY_MP3("#"), HELLO("("), PONG(","), UPDATE_CHANNEL_SETTINGS("1"), BUTLER(
-			"5"), KICK("6"), MODULE(":"), CHANNEL_FRAME("a"), CHANNEL_LIST("b"), SWITCH_CHANNEL(
-			"d"), PUBLIC_MESSAGE("e"), UPDATE_CHANNEL_BACKGROUND("j"), POPUP(
-			"k"), ADD_USER("l"), ADD_ICON("m"), PLAY_SOUND("o"), PRIVATE_MESSAGE(
-			"r"), ACTION("t"), USER_LIST("u"), REMOVE_USER("w"), OPEN_URL("x"), REMOVE_ICON(
-			"z");
+	PLAY_MP3("#"),
+	HELLO("("),
+	PONG(","),
+	UPDATE_CHANNEL_SETTINGS("1"),
+	BUTLER("5"),
+	KICK("6"),
+	MODULE(":"),
+	CHANNEL_FRAME("a"),
+	CHANNEL_LIST("b"),
+	SWITCH_CHANNEL("d"),
+	PUBLIC_MESSAGE("e"),
+	UPDATE_CHANNEL_BACKGROUND("j"),
+	POPUP("k"),
+	ADD_USER("l"),
+	ADD_ICON("m"),
+	PLAY_SOUND("o"),
+	PRIVATE_MESSAGE("r"),
+	ACTION("t"),
+	USER_LIST("u"),
+	REMOVE_USER("w"),
+	OPEN_URL("x"),
+	REMOVE_ICON("z");
 
 	private String opcode;
 

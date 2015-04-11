@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +64,7 @@ public class Poll {
 				"Umfrage",
 				String.format("Umfrage #%s", id),
 				String.format(
-						"%s§##Unter allen Teilnehmern werden 5 Knuddels verlost.",
+						"%sÂ§##Unter allen Teilnehmern werden 5 Knuddels verlost.",
 						question), 400, 300);
 		Panel panel = new Panel();
 
@@ -102,7 +101,7 @@ public class Poll {
 
 				StringBuilder result = new StringBuilder();
 				result.append(question);
-				result.append("§#");
+				result.append("Â§#");
 
 				for (String answer : answers) {
 					int count = 0;
@@ -120,7 +119,7 @@ public class Poll {
 				}
 
 				result.append(String
-						.format("##...und gewonnen hat _°B>_h%s|/serverpp \"|/w \"<r°_!",
+						.format("##...und gewonnen hat _Â°B>_h%s|/serverpp \"|/w \"<rÂ°_!",
 								winner));
 				String popup = Popup.create("Umfrage",
 						String.format("Umfrage #%s - Ergebnis", id),
@@ -141,7 +140,7 @@ public class Poll {
 					String popup = Popup
 							.create("Umfrage",
 									String.format("Umfrage #%s - Problem", id),
-									"Du hast dir für die Beantwortung der Umfrage zu lange Zeit gelassen.",
+									"Du hast dir fï¿½r die Beantwortung der Umfrage zu lange Zeit gelassen.",
 									400, 300);
 					client.send(popup);
 				} else {

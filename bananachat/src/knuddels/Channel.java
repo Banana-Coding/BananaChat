@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -95,7 +94,7 @@ public class Channel {
 				client.sendButlerMessage(
 						name,
 						String.format(
-								"°BB°_Dieser Channel hat folgendes Thema:°r°#%s",
+								"Â°BBÂ°_Dieser Channel hat folgendes Thema:Â°rÂ°#%s",
 								topic));
 			}
 		}
@@ -187,7 +186,7 @@ public class Channel {
 
 		if (topic != null) {
 			client.sendButlerMessage(name, String.format(
-					"°BB°_Dieser Channel hat folgendes Thema:°r°#%s", topic));
+					"Â°BBÂ°_Dieser Channel hat folgendes Thema:Â°rÂ°#%s", topic));
 		}
 	}
 

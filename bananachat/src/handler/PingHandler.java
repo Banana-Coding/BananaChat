@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package handler;
-
 import knuddels.Client;
 import tools.PacketCreator;
 
@@ -22,10 +21,11 @@ import tools.PacketCreator;
  */
 public class PingHandler {
 	public static void handle(String[] tokens, Client client) {
-		if (tokens[1].equals("-")) {
+		if(tokens[1].equals("-")) {
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
+				/* Do Nothing */
 			}
 
 			client.send(PacketCreator.pong());

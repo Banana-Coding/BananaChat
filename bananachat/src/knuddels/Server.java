@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf ver둵dert, aber weder in andere Projekte eingef웗t noch
+ * darf ver채ndert, aber weder in andere Projekte eingef체gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -24,13 +23,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import org.java_websocket.WebSocket;
+
 import tools.database.ConnectionPool;
 import tools.database.PoolConnection;
 
 /**
  * 
  * @author Flav
- * @since 1.0
+ * @author Bizzi
+ * @since 1.1
  */
 public class Server {
 	private final static Server instance;
@@ -38,7 +41,8 @@ public class Server {
 	private Client butler;
 	private Map<String, Channel> channels;
 	private Map<String, String> smileys;
-
+	private boolean huffman = false;
+	
 	static {
 		instance = new Server();
 	}
@@ -75,9 +79,36 @@ public class Server {
 			clients.put(client.getName().toLowerCase(), client);
 		}
 	}
+	
+	public Client getClient(WebSocket socket) {
+		synchronized (clients) {
+			for(Client client : clients.values()) {
+				if(client.hasWebsocket(socket)) {
+					return client;
+				}
+			}
+		}
+		
+		return null;
+	}
 
 	public void removeClient(String name) {
 		synchronized (clients) {
+			clients.remove(name.toLowerCase());
+		}
+	}
+	
+	public void removeClient(WebSocket socket) {
+		synchronized (clients) {
+			String name = "";
+			
+			for(Client client : clients.values()) {
+				if(client.hasWebsocket(socket)) {
+					name = client.getName();
+					break;
+				}
+			}
+			
 			clients.remove(name.toLowerCase());
 		}
 	}
@@ -96,7 +127,7 @@ public class Server {
 		while (it.hasNext()) {
 			String code = it.next();
 			message = message.replace(code,
-					String.format("�>%s<�", smileys.get(code)));
+					String.format("째>%s<째", smileys.get(code)));
 		}
 
 		return message;
@@ -157,11 +188,24 @@ public class Server {
 		}
 	}
 
-	private void listen(int port) {
+	private void listen(int port, int wss_port) {
 		try {
 			ServerSocket listener = new ServerSocket(port);
-			System.out.println(String.format("Listening on port %s", port));
-
+			
+			try {
+				new FlashPolicyServer().run();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			try {
+				new Websocket(wss_port).start();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println(String.format("Listening on port %s (Websocket: %s)", port, wss_port));
+			
 			while (true) {
 				Socket socket = listener.accept();
 				new SessionHandler(socket).start();
@@ -173,14 +217,21 @@ public class Server {
 
 	public static void main(String[] args) {
 		int port;
-
+		int wss_port;
+		
 		if (args.length > 0) {
 			port = Integer.parseInt(args[0]);
+			wss_port = Integer.parseInt(args[1]);
 		} else {
 			port = 2710; // default
+			wss_port = 2711;
 		}
 
 		instance.loadConfigs();
-		instance.listen(port);
+		instance.listen(port, wss_port);
+	}
+
+	public boolean getHuffman() {
+		return this.huffman;
 	}
 }

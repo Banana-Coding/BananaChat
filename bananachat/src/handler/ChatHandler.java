@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package handler;
-
 import knuddels.Channel;
 import knuddels.Client;
 import knuddels.CommandParser;
@@ -24,17 +23,21 @@ import knuddels.Server;
  */
 public class ChatHandler {
 	public static void handle(String[] tokens, Client client) {
+		if(tokens.length != 3) {
+			return;
+		}
+		
 		Channel channel = Server.get().getChannel(tokens[1]);
 
-		if (channel == null || !channel.getClients().contains(client)) {
+		if(channel == null || !channel.getClients().contains(client)) {
 			return;
 		}
 
-		if (client.isAway()) {
+		if(client.isAway()) {
 			client.setAway(false);
 		}
 
-		if (!client.isModerator()) {
+		if(!client.isModerator()) {
 			if (client.checkSpam(channel.getName())) {
 				return;
 			}
@@ -42,11 +45,11 @@ public class ChatHandler {
 
 		String message = tokens[2].trim();
 
-		if (message.isEmpty()) {
+		if(message.isEmpty()) {
 			return;
 		}
 
-		if (message.charAt(0) == '/') {
+		if(message.charAt(0) == '/') {
 			CommandParser.parse(message, client, channel);
 		} else {
 			channel.broadcastMessage(message, client, false);

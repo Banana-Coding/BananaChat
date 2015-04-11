@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package handler;
-
 import knuddels.Channel;
 import knuddels.Client;
 import knuddels.Server;
@@ -25,7 +24,7 @@ public class LeaveChannelHandler {
 	public static void handle(String[] tokens, Client client) {
 		Channel channel = Server.get().getChannel(tokens[1]);
 
-		if (channel == null || !channel.getClients().contains(client)) {
+		if(channel == null || !channel.getClients().contains(client)) {
 			return;
 		}
 

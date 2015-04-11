@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verändert, aber weder in andere Projekte eingefügt noch
+ * darf ver√§ndert, aber weder in andere Projekte eingef√ºgt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -22,6 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.java_websocket.WebSocket;
 import tools.KCodeParser;
 import tools.PacketCreator;
 import tools.Pair;
@@ -35,8 +35,9 @@ import tools.huffman.Huffman;
  * @since 1.0
  */
 public class Client {
-	private final List<Channel> channels;
-	private final Socket socket;
+	private List<Channel> channels;
+	private Socket socket;
+	private WebSocket websocket;
 	private OutputStream out;
 	private List<Pair<String, Integer>> icons;
 	private String name;
@@ -56,7 +57,8 @@ public class Client {
 	public Client(Socket socket) {
 		channels = new ArrayList<Channel>();
 		this.socket = socket;
-
+		this.websocket = null;
+		
 		if (socket == null) {
 			return;
 		}
@@ -65,6 +67,20 @@ public class Client {
 			out = socket.getOutputStream();
 		} catch (IOException e) {
 		}
+	}
+	
+	public Client setToWebsocket(WebSocket socket) {
+		channels = new ArrayList<Channel>();
+		this.socket = null;
+		this.websocket = socket;
+
+		if(websocket == null) {
+			return null;
+		}
+		
+		this.name = String.format("WebSocket Client #%s", socket.getLocalSocketAddress().hashCode());
+
+		return this;
 	}
 
 	public List<Pair<String, Integer>> getIcons() {
@@ -422,10 +438,25 @@ public class Client {
 	}
 
 	public void send(String message) {
+		System.err.println(message);
+		
 		if (socket != null && socket.isConnected()) {
 			try {
-				out.write(Protocol.encode(Huffman.getEncoder().encode(message,
-						0)));
+				if(Server.get().getHuffman()) {
+					out.write(Protocol.encode(Huffman.getEncoder().encode(message, 0)));
+				} else {
+					out.write(Protocol.encode(message.getBytes()));
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		// Send over WebSocket
+		if(websocket != null && websocket.isOpen()) {
+			try {
+				websocket.send(Websocket.withHuffman() ? new String(Huffman.getEncoder().encode(message, 0)) : message);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -442,5 +473,13 @@ public class Client {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public boolean hasWebsocket(WebSocket socket) {
+		if(socket != null && socket == this.websocket) {
+			return true;
+		}
+		
+		return false;
 	}
 }

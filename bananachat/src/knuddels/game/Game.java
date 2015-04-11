@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels.game;
-
 import java.util.List;
 import knuddels.Client;
 
@@ -22,9 +21,6 @@ import knuddels.Client;
  */
 public interface Game {
 	public boolean parsePublicMessage(String message, Client client);
-
-	public boolean parsePrivateMessage(List<Client> targets, String message,
-			Client client);
-
+	public boolean parsePrivateMessage(List<Client> targets, String message, Client client);
 	public void onLeave(Client client);
 }

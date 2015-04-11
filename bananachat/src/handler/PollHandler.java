@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package handler;
-
 import java.util.ArrayList;
 import java.util.List;
 import knuddels.Client;
@@ -55,7 +54,7 @@ public class PollHandler {
 				String popup = Popup
 						.create("Umfrage",
 								"Problem",
-								"Es müssen eine Frage und mindestens zwei verschiedene Antwortmöglichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht möglich.",
+								"Es mÃ¼ssen eine Frage und mindestens zwei verschiedene AntwortmÃ¶glichkeiten gegeben sein. Zweimal die selbe Antwort ist nicht mÃ¶glich.",
 								400, 300);
 				client.send(popup);
 			} else {

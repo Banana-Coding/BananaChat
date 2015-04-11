@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2013  Flav <http://banana-coding.com>
  *
  * Diese Datei unterliegt dem Copyright von Banana-Coding und
- * darf verŠndert, aber weder in andere Projekte eingefŸgt noch
+ * darf verÃ¤ndert, aber weder in andere Projekte eingefÃ¼gt noch
  * reproduziert werden.
  *
  * Der Emulator dient - sofern der Client nicht aus Eigenproduktion
@@ -11,7 +11,6 @@
  */
 
 package knuddels;
-
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +53,7 @@ public class CommandParser {
 				arg = Server.get().parseSmileys(arg);
 
 				if (!arg.isEmpty()) {
-					msg = String.format("%s (%s§)", msg, arg);
+					msg = String.format("%s (%sï¿½)", msg, arg);
 				}
 
 				channel.broadcastAction(client.getName(), msg);
@@ -87,7 +86,7 @@ public class CommandParser {
 				client.sendButlerMessage(
 						channel.getName(),
 						String.format(
-								"Dieser Channel ist auf _maximal %s_ Leute beschränkt, bitte wähl einen anderen Channel.",
+								"Dieser Channel ist auf _maximal %s_ Leute beschrÃ¤nkt, bitte wÃ¤hle einen anderen Channel.",
 								channelTo.getSize()));
 			} else {
 				client.joinChannel(channelTo);
@@ -124,7 +123,7 @@ public class CommandParser {
 
 			if (nickname.equalsIgnoreCase(client.getName())) {
 				client.sendButlerMessage(channel.getName(),
-						"Sie können sich nicht selbst hinauswerfen.");
+						"Sie kÃ¶nnen sich nicht selbst hinauswerfen.");
 				return;
 			}
 
@@ -137,7 +136,7 @@ public class CommandParser {
 				client.sendButlerMessage(
 						channel.getName(),
 						String.format(
-								"Sie haben nicht genügend Rechte um %s hinauszuwerfen.",
+								"Sie haben nicht genÃ¼gend Rechte um %s hinauszuwerfen.",
 								target.getName()));
 			} else {
 				target.logout("Hinausgeworfen");
@@ -151,7 +150,7 @@ public class CommandParser {
 
 			if (nickname.equalsIgnoreCase(client.getName())) {
 				client.sendButlerMessage(channel.getName(),
-						"Du kannst Dich doch nicht selbst küssen!");
+						"Du kannst Dich doch nicht selbst kÃ¼ssen!");
 				return;
 			}
 
@@ -164,14 +163,14 @@ public class CommandParser {
 				client.sendButlerMessage(
 						channel.getName(),
 						String.format(
-								"°>_h%s|/serverpp \"|/w \"<° hält sich im Moment _in einem anderen Channel_ auf.",
+								"Â°>_h%s|/serverpp \"|/w \"<Â° hÃ¤lt sich im Moment _in einem anderen Channel_ auf.",
 								target.getName()));
 			} else {
 				target.increaseKisses();
 				channel.broadcastAction(
 						">",
 						String.format(
-								"°>_h%s|/serverpp \"|/w \"<° kann einfach nicht anders und gibt °>_h%s|/serverpp \"|/w \"<° einen langen Kuss.",
+								"Â°>_h%s|/serverpp \"|/w \"<Â° kann einfach nicht anders und gibt Â°>_h%s|/serverpp \"|/w \"<Â° einen langen Kuss.",
 								client.getName(), target.getName()));
 			}
 		} else if (cmd.equals("knuddel")) {
@@ -196,7 +195,7 @@ public class CommandParser {
 				client.sendButlerMessage(
 						channel.getName(),
 						String.format(
-								"°>_h%s|/serverpp \"|/w \"<° hält sich im Moment _in einem anderen Channel_ auf.",
+								"Â°>_h%s|/serverpp \"|/w \"<Â° hÃ¤lt sich im Moment _in einem anderen Channel_ auf.",
 								target.getName()));
 			} else if (client.getKnuddels() < 1) {
 				client.sendButlerMessage(channel.getName(),
@@ -207,7 +206,7 @@ public class CommandParser {
 				channel.broadcastAction(
 						">",
 						String.format(
-								"°>_h%s|/serverpp \"|/w \"<° hat °>_h%s|/serverpp \"|/w \"<° scheinbar richtig gern und °RR°knuddelt°BB° eifrig drauf los.",
+								"Â°>_h%s|/serverpp \"|/w \"<Â° hat Â°>_h%s|/serverpp \"|/w \"<Â° scheinbar richtig gern und Â°RRÂ°knuddeltÂ°BBÂ° eifrig drauf los.",
 								client.getName(), target.getName()));
 			}
 		} else if (cmd.equals("m")) {
@@ -261,7 +260,7 @@ public class CommandParser {
 			Popup popup = new Popup(
 					"Umfrage",
 					"Umfrage erstellen",
-					"Gib unten eine Frage und mindestens zwei verschiedene Antwortmöglichkeiten - durch Semikolons getrennt - ein. Jeder Chatter hat dann die Möglichkeit die Umfrage innerhalb von einer Minute zu beantworten und dabei 5 Knuddels abzusahnen, welche unter allen Teilnehmern verlost werden.",
+					"Gib unten eine Frage und mindestens zwei verschiedene AntwortmÃ¶glichkeiten - durch Semikolons getrennt - ein. Jeder Chatter hat dann die MÃ¶glichkeit die Umfrage innerhalb von einer Minute zu beantworten und dabei 5 Knuddels abzusahnen, welche unter allen Teilnehmern verlost werden.",
 					400, 300);
 
 			Panel panel1 = new Panel();
@@ -307,7 +306,7 @@ public class CommandParser {
 			if (arg.isEmpty()) {
 				channel.setTopic(null);
 				client.sendButlerMessage(channel.getName(),
-						"Das Thema wurde gelöscht.");
+						"Das Thema wurde gelÃ¶scht.");
 			} else {
 				channel.setTopic(arg);
 			}
@@ -339,7 +338,7 @@ public class CommandParser {
 			String title = String.format("Who is %s ?", nickname);
 			StringBuilder whois = new StringBuilder();
 
-			whois.append(String.format("_°>_h%s|/serverpp \"<r°_", nickname));
+			whois.append(String.format("_Â°>_h%s|/serverpp \"<rÂ°_", nickname));
 			whois.append(String.format(" hat sich am _%s_",
 					target.getRegistrationDate()));
 			whois.append(String.format(" um %s", target.getRegistrationTime()));
@@ -352,37 +351,37 @@ public class CommandParser {
 
 				if (ch == null) {
 					whois.append(String
-							.format("°>py_g.gif<°°%%05°%s ist im Moment im Channel _? °E°ONLINE°r°_!°%%00°##",
+							.format("Â°>py_g.gif<Â°Â°%%05Â°%s ist im Moment im Channel _? Â°EÂ°ONLINEÂ°rÂ°_!Â°%%00Â°##",
 									nickname));
 				} else {
 					whois.append(String
-							.format("°>py_g.gif<°°%%05°%s ist im Moment im Channel _°>_h%s|/go \"|/go +\"<° °E°ONLINE°r°_!°%%00°##",
+							.format("Â°>py_g.gif<Â°Â°%%05Â°%s ist im Moment im Channel _Â°>_h%s|/go \"|/go +\"<Â° Â°EÂ°ONLINEÂ°rÂ°_!Â°%%00Â°##",
 									nickname, ch.getName()));
 				}
 			} else {
 				whois.append(String
-						.format("°>py_r.gif<°°%%05°%s ist im Moment _OFFLINE_!°%%00°##",
+						.format("Â°>py_r.gif<Â°Â°%%05Â°%s ist im Moment _OFFLINE_!Â°%%00Â°##",
 								nickname));
 			}
 
-			whois.append(String.format("%s hat...°%%35°", nickname));
-			whois.append(String.format("°>gt.gif<° _°R°%s°r°_ %s...#", nf
+			whois.append(String.format("%s hat...Â°%%35Â°", nickname));
+			whois.append(String.format("Â°>gt.gif<Â° _Â°RÂ°%sÂ°rÂ°_ %s...#", nf
 					.format(target.getKisses()),
 					target.getKisses() == 1 ? "Knutschfleck" : "Knutschflecken"));
 			whois.append(String.format(
-					"°>gt.gif<° und kann noch _°R°%sx°r° knuddeln_!",
+					"Â°>gt.gif<Â° und kann noch _Â°RÂ°%sxÂ°rÂ° knuddeln_!",
 					nf.format(target.getKnuddels())));
-			whois.append("°%00°##°-°");
+			whois.append("Â°%00Â°##Â°-Â°");
 
 			if (target.getGender() == 1) {
-				whois.append("_Geschlecht_:°%35°männl. °>male.png<°°%00°#");
+				whois.append("_Geschlecht_:Â°%35Â°mÃ¤nnl. Â°>male.png<Â°Â°%00Â°#");
 			} else if (target.getGender() == 2) {
-				whois.append("_Geschlecht_:°%35°weibl. °>female.png<°°%00°#");
+				whois.append("_Geschlecht_:Â°%35Â°weibl. Â°>female.png<Â°Â°%00Â°#");
 			}
 
 			if (client.isModerator()) {
-				whois.append("°-°");
-				whois.append(String.format("_IP-Adresse_:°%%35°%s°%%00°#",
+				whois.append("Â°-Â°");
+				whois.append(String.format("_IP-Adresse_:Â°%%35Â°%sÂ°%%00Â°#",
 						target.getIPAddress()));
 			}
 
